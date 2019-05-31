@@ -1,4 +1,6 @@
 const registrar = () => {
+
+
 /* let email = document.getElementById('email').value;
  let password = document.getElementById('password').value;
 
@@ -13,3 +15,4 @@ const registrar = () => {
   */
  console.log('hola')
 }
+

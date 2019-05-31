@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Document</title>
 
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js">
@@ -11,21 +12,31 @@
     <script>
     // Initialize Firebase
         let firebaseConfig = {
+
             apiKey: "AIzaSyBkN8Tj0PnSgohRCLSHmwAJnNUlj2Vh9jg",
             authDomain: "prueba-df0bd.firebaseapp.com",
             databaseURL: "https://prueba-df0bd.firebaseio.com",
             projectId: "prueba-df0bd",
             storageBucket: "prueba-df0bd.appspot.com",
-            messagingSenderId: "393301103298"
+
+            messagingSenderId: "393301103298",
+            appId: "1:393301103298:web:c2b9ed3d2073eba5"
+
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
     </script>
 </head>
 <body>
+
+
+    <div id="dinamicTemplates"></div>
+    <div id="error-ingreso"></div>
     <input id="email" type="email" placeholder="Ingresa email">
-    <input id="password" type="password" placeholder="Ingresa contraseña">
-    <button onclick="registrar()">Enviar</button>
+    <input id="contrasena" type="password" placeholder="Ingresa contraseña">
+    <button type="submit" onclick="registrar()" required >Enviar</button>
     <script src="main.js"></script>
+
+
 </body>
 </html>

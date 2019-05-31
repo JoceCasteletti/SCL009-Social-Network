@@ -1,13 +1,18 @@
 const registrar = () => {
-    let email = document.getElementById('email').value;
-    let contrasena = document.getElementById('contrasena').value;
-if(email== "" || contrasena==""){
-   document.getElementById("error-ingreso").innerHTML = "Tu mail o contraseña son incorrectos"
+
+
+/* let email = document.getElementById('email').value;
+ let password = document.getElementById('password').value;
+
+ firebase.auth().createUserWithEmailAndPassword(email, password)
+ .catch(function(error) {
+    // Handle Errors here.
+    let errorCode = error.code;
+    let errorMessage = error.message;
+    console.log(errorCode);
+    console.log(errorMessage);    // ...
+  });
+  */
+ console.log('hola')
 }
-   
-   
-   
-    console.log(email);
-    console.log(contrasena);
-   
-   }
+

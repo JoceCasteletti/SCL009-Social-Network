@@ -9,9 +9,9 @@
   "scripts": {
     "test": "jest --coverage",
     "eslint": "eslint --ext .js src/test",
-    "htmlhint":"htmlhint src/*.html",
-    "pretest":"npm run eslint && npm run htmlhint",
-    "deploy":"gh pages -g src/"
+    "htmlhint": "htmlhint src/*.html",
+    "pretest": "npm run eslint && npm run htmlhint",
+    "deploy": "gh pages -g src/"
   },
   "repository": {
     "type": "git",

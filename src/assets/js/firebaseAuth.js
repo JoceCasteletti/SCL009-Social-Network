@@ -1,7 +1,10 @@
- import { templateHomeSingIn } from './assets/views/templateHomeSingIn.js';
+// import { templateNewUser} from'./assets/views/templateNewUser.js';
+
 //CREAR NUEVO USUARIO
- const newUser = document.getElementById("form-new-user");
- newUser.addEventListener('submit', )
+
+
+ 
+//  })
 
 
 

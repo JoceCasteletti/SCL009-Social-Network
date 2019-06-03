@@ -1,6 +1,6 @@
-import { templatePost } from './templatePost.js'
-import { templateHomeSingIn } from './templateHomeSingIn.js'
-
+// import { templatePost } from './templatePost.js'
+// import { templateHomeSingIn } from './templateHomeSingIn.js'
+import { createNewUser } from '../js/authdom.js';
 
 export const templateNewUser = () =>{
 
@@ -21,7 +21,7 @@ export const templateNewUser = () =>{
 <input id="password-new.user" type="text" class="info-new"" placeholder="Contraseña 6 dígitos">
 </div>
 <div>
-<input id="confirm-password" type="text" class="info-new"" placeholder="Confirmar contraseña 6 dígitos">
+<input id="confirm-pass" type="text" class="info-new"" placeholder="Confirmar contraseña 6 dígitos">
 </div>
 <div>
 <input id="country" type="text" class="info-new"" placeholder="Pais">
@@ -34,14 +34,14 @@ export const templateNewUser = () =>{
 </div>
 </form>
 </div>`
-}
 
-// document.getElementById('btn-crear').addEventListener('click', () => {
-//     templatePost();
-//     window.location.hash = '#/post'
-//  })
+document.getElementById('create-acc').addEventListener('click', () => {
+    createNewUser();
+
+ });
 
 //  document.getElementById('btn').addEventListener('click', () => {
 //     templateHomeSingIn();
 //     window.location.hash = '#/home'
 //  })
+}

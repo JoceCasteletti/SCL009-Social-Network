@@ -1,17 +1,31 @@
-// import { logoutMessage } from "./logout";
-// logoutMessage();
+ import { templateHomeSingIn } from './assets/views/templateHomeSingIn.js';
+//CREAR NUEVO USUARIO
+ const newUser = document.getElementById("form-new-user");
+ newUser.addEventListener('submit', )
 
-firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+
+
+// handleSignUp() => {
+//   let email = document.getElementById('email').value;
+//   let password = document.getElementById('password').value;
+//   if (email.length < 4) {
+//     alert('Please enter an email address.');
+//     console.log(email);
+//     return;
+//   }
+//   if (password.length < 4) {
+//     alert('Please enter a password.');
+//     console.log(password);
+//     return;
+//   }
+
+
+
+
+
+firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-    // [START_EXCLUDE]
-    if (errorCode === 'auth/wrong-password') {
-      alert('Wrong password.');
-    } else {
-      alert(errorMessage);
-    }
-    console.log(error);
-    document.getElementById('quickstart-sign-in').disabled = false;
-    // [END_EXCLUDE]
+    // ...
   });

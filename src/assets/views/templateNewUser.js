@@ -7,7 +7,7 @@ export const templateNewUser = () =>{
     document.getElementById('dinamicTemplates').innerHTML =
 ` <div
 <h1> Nuevo Usuario Patria </h1>
-<form>
+<form id="form-new-user">
 <div id="name">
 <input type="text" class="info-new" placeholder="Nombre">
 </div>

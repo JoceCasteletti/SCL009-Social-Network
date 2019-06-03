@@ -1,7 +1,22 @@
  import { templateHomeSingIn } from './assets/views/templateHomeSingIn.js';
 //CREAR NUEVO USUARIO
  const newUser = document.getElementById("form-new-user");
- newUser.addEventListener('submit', )
+ newUser.addEventListener('submit', (e) => {
+ e.preventDefault();
+
+//GET infor user
+const name = newUser['name'].value;
+const surname = newUser['surname'].value;
+const emailNewUser = newUser['email-new-user'].value;
+const password = newUser['password'].value;
+const confirmPassword = newUser['confirm-password'].value;
+const country = newUser['country'].value;
+const city = newUser['city'].value;
+
+ 
+ console.log(name,surname,emailNewUser,password,confirmPassword,country,city);
+ 
+ })
 
 
 

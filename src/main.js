@@ -1,13 +1,10 @@
-const registrar = () => {
-    let email = document.getElementById('email').value;
-    let contrasena = document.getElementById('contrasena').value;
-if(email== "" || contrasena==""){
-   document.getElementById("error-ingreso").innerHTML = "Tu mail o contraseña son incorrectos"
-}
-   
-   
-   
-    console.log(email);
-    console.log(contrasena);
-   
+import { initRouter } from './route.js';
+//import {initFirebase} from './asserts/js/firebaseInit.js;
+
+
+   const init = ()=>{
+        initRouter();
+       //initFirebase();
    }
+
+   window.addEventListener('load', init);

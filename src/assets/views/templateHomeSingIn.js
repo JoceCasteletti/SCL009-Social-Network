@@ -1,24 +1,51 @@
-document.getElementById('dinamicTemplate').innerHTML =
+import { templateNewUser } from './templateNewUser.js'
+import { templatePost } from './templatePost.js'
 
-    ` <div id="singIn" class="signIn"> 
+
+export const templateHomeSingIn = () =>{
+
+document.getElementById('dinamicTemplates').innerHTML =
+
+    `<div class="containerSingIn"> 
 <div id="titulo-signIn">
   <img src="" id="" alt=""/> 
   <h1>Patria Comunidad</h1>
-     <p>Tips para facilitar tu viaje</p>
+     <h3>Tips para facilitar tu viaje</h3>
   </div>
-     <div id="input-mail">
-       <input type="" id="" class="" placeholder="" required></input>
+  <form>
+     <div class="inputs">
+     <div>
+       <input type="text" id="email" class="caja-texto form-control" placeholder="Ingresa tu mail" required></input>
      </div>
-     <div id="input-pass">
-     <input type="" id="" class="" placeholder="" required></input>
+     <div>
+     <input type="text" id="password" class="caja-texto form-control" placeholder="Ingresa tu contraseña" required></input>
   </div>
-  <div id="btns-ingresar">
-     <button type="submit" id="">Entrar</button>
-     <button type="submit" id="">Iniciar con Google</button>
   </div>
+  <div class="btns-option">
+  <div>
+     <button type="submit" id="btn-go" >Entrar</button>
+     </div>
+     <div>
+     <button type="submit" id="btn-google" >Iniciar con Google</button>
+  </div>
+  </form>
      </div>
   
   <div id="createAcc">
-  <p>¿Aún no tienes cuenta? <a>Crear Cuenta</a> </p>
+  <p>¿Aún no tienes cuenta?</p>
+  <button id="btn-new-user" type="button">Crear Cuenta</button>
+  </div>
+  </div>
+  `
+  
+  }
 
-  </div>`
+  document.getElementById('btn-new-user').addEventListener('click', () => {
+     templateNewUser();
+     window.location.hash = '#/new-user'
+  });
+
+//   document.getElementById('btn-go').addEventListener('click', () => {
+//      templatePost();
+//      window.location.hash = '#/post'
+//   });

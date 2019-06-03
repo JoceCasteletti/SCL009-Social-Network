@@ -1,3 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
 body{
     background-color: white;
+    font-family: 'Josefin Sans', sans-serif;
 }
+h1{
+    color:#1e8b8b;
+    margin:0px;
+    margin-top:50px;
+    text-align: center;
+}
+h3{
+    margin:0px;
+    margin-bottom:20px;
+    text-align: center;
+    color:#707575;
+}
+p{
+    margin:0px;
+    margin-top:150px;
+    text-align: center;
+    color:#707575;
+}
+.caja-texto{
+    border-radius: 6px;
+    padding: 10px;
+    margin: 0px;
+    margin-bottom:2%;
+    width:60%;
+}
+#btn-go, #btn-google{
+    color: white;
+    background-color: #1e8b8b;
+    border-color: #1e8b8b;
+    margin-bottom:1%;
+    border-radius: 10px;
+    padding:10px;;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    width: 60%;
+}
+#btn-new-user{
+    background-color: transparent;
+    border-style: none;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #1e8b8b;
+    width: 80%;
+}
+
+
+.info-new{
+    border-radius: 6px;
+    padding: 10px;
+    margin: 0px;
+    margin-bottom:2%;
+    width:60%;
+}
+#name{
+    margin-top:20px;
+}
+
+#create-acc{
+    color: white;
+    background-color: #1e8b8b;
+    border-color: #1e8b8b;
+    border-radius: 10px;
+    padding:10px;;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    width: 60%;
+    text-align: center;
+}
+
+.post{
+    background-color:#c3dbdb;
+    border-radius:10px ;
+}
+
+
+
+
+/* width:300px;
+height:300px;
+border-radius:150px;
+border:10px solid #666 */

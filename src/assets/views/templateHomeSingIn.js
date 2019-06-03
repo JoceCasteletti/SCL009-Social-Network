@@ -38,14 +38,15 @@ document.getElementById('dinamicTemplates').innerHTML =
   </div>
   `
   
-  }
+  
 
   document.getElementById('btn-new-user').addEventListener('click', () => {
      templateNewUser();
      window.location.hash = '#/new-user'
   });
 
-//   document.getElementById('btn-go').addEventListener('click', () => {
-//      templatePost();
-//      window.location.hash = '#/post'
-//   });
+  document.getElementById('btn-go').addEventListener('click', () => {
+     templatePost();
+     window.location.hash = '#/post'
+  });
+}

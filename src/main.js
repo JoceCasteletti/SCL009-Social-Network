@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+import { initRouter } from './route.js';
+//import {initFirebase} from './asserts/js/firebaseInit.js;
+
+
+   const init = ()=>{
+        initRouter();
+       //initFirebase();
+   }
+
+   window.addEventListener('load', init);
+=======
 const registrar = () => {
 
 
@@ -16,3 +28,4 @@ const registrar = () => {
  console.log('hola')
 }
 
+>>>>>>> eda477b6bcdc9651a15bde7f0520b98d949dcc81

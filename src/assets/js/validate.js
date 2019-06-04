@@ -1,4 +1,4 @@
 export const validateNewUser = (email, password)
-    if(name.len)
+    if(name.length)
 
 

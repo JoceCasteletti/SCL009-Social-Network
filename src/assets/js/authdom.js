@@ -1,5 +1,5 @@
 // import {firebaseAuth} from './firebaseAuth.js';
-// import {validNewUser} from './validate.js';
+ import { checkUser } from './validate.js';
 
 export const createNewUser = () => {
 
@@ -13,3 +13,9 @@ export const createNewUser = () => {
 
     console.log(name,surname,email,password,confirmPass,country,city);
 };
+
+let result = checkUser(name,surname,email,password,confirmPass,country,city)
+if(result === true){
+    createUserWithEmailAndPassword();
+} document.getElementById("error-create").innerHTML= 
+

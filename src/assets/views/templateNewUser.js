@@ -10,15 +10,19 @@ export const templateNewUser = () =>{
 <form id="form-new-user">
 <div >
 <input id="name" type="text" class="info-new" placeholder="Nombre">
+<p id="error-create">Debes ingresar tu Nombre"</p>
 </div>
 <div>
 <input id="surname" type="text" class="info-new"" placeholder="Apellido">
+<p>Debes ingresar tu Apellido"</p>
 </div>
 <div >
 <input id="email-new-user" type="text" class="info-new"" placeholder="Email">
+<p>Debes ingresar tu email"</p>
 </div>
 <div>
 <input id="password-new.user" type="text" class="info-new"" placeholder="Contraseña 6 dígitos">
+<p>Debes ingresar tu password"</p>
 </div>
 <div>
 <input id="confirm-pass" type="text" class="info-new"" placeholder="Confirmar contraseña 6 dígitos">

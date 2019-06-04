@@ -1,5 +1,5 @@
-// import {firebaseAuth} from './firebaseAuth.js';
- import { checkUser } from './validate.js';
+import { crateUserFirebase } from './firebaseAuth.js'
+import {validateNewUser} from './validate.js';
 
 export const createNewUser = () => {
 
@@ -12,10 +12,10 @@ export const createNewUser = () => {
     let city= document.getElementById('city').value;
 
     console.log(name,surname,email,password,confirmPass,country,city);
-};
-
-let result = checkUser(name,surname,email,password,confirmPass,country,city)
+//validar nuevo usario 
+let result = validateNewUser(name,surname,email,password,confirmPass,country,city)
 if(result === true){
-    createUserWithEmailAndPassword();
-} document.getElementById("error-create").innerHTML= 
-
+    crateUserFirebase(email,password);
+} document.getElementById("error-create-name").innerHTML = "te equivocaste ridicule";
+console.log(result)
+};

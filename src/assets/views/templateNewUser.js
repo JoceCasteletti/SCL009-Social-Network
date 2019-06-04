@@ -1,6 +1,6 @@
 // import { templatePost } from './templatePost.js'
 // import { templateHomeSingIn } from './templateHomeSingIn.js'
-import { createNewUser } from '../js/authdom.js';
+// import { createNewUser } from '../js/authdom.js';
 
 export const templateNewUser = () =>{
 
@@ -36,8 +36,7 @@ export const templateNewUser = () =>{
 </div>`
 
 document.getElementById('create-acc').addEventListener('click', () => {
-    createNewUser();
-
+   createNewUser();
  });
 
 //  document.getElementById('btn').addEventListener('click', () => {

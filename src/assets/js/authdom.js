@@ -1,7 +1,7 @@
 // import {firebaseAuth} from './firebaseAuth.js';
 // import {validNewUser} from './validate.js';
 
-const createNewUser = () => {
+export const createNewUser = () => {
 
     let name= document.getElementById('name').value;
     let surname= document.getElementById('surname').value;
@@ -11,5 +11,5 @@ const createNewUser = () => {
     let country= document.getElementById('country').value;
     let city= document.getElementById('city').value;
 
+    console.log(name,surname,email,password,confirmPass,country,city);
 };
- console.log(createNewUser);

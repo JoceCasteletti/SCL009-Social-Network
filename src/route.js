@@ -36,8 +36,8 @@ const showTemplate = (hash) => {
 export const initRouter = () => {
     //evento load cuando se cargue nuestra ventana)
     window.addEventListener('load', changeRoute(window.location.hash));
-    let containerRoot=document.getElementById('root');
-    containerRoot.appendChild(templateHomeSingIn());
+    //let containerRoot=document.getElementById('root');
+    // containerRoot.appendChild(templateHomeSingIn());
     //detecta los cambios en html y saca el # y asi va cambiando templates
     if ('onhashchange' in window) {
         window.addEventListener('hashchange', () => {

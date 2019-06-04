@@ -4,7 +4,7 @@ import { templateHomeSingIn } from './templateHomeSingIn.js'
 
 export const templatePost = () => {
 
-    document.getElementById('dinamicTemplates').innerHTML =
+    document.getElementById('root').innerHTML =
 `
 <div>
 <div id="profile">

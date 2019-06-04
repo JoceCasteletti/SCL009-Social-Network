@@ -4,10 +4,12 @@ import { createNewUser } from '../js/authdom.js';
 
 export const templateNewUser = () =>{
 
-    document.getElementById('dinamicTemplates').innerHTML =
+    document.getElementById('root').innerHTML =
 ` <div
 <h1> Nuevo Usuario Patria </h1>
 <form id="form-new-user">
+<div id="error">
+</div>
 <div >
 <input id="name" type="text" class="info-new" placeholder="Nombre">
 </div>

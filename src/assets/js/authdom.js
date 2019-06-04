@@ -1,5 +1,6 @@
 import {firebaseAuth} from './firebaseAuth.js';
-import {checkUser} from './validate.js';
+//import {createUserWithEmailAndPassword} from './validate.js'
+import {validateNewUser} from './validate.js';
 
 export const createNewUser = () => {
 
@@ -12,7 +13,16 @@ export const createNewUser = () => {
     let city= document.getElementById('city').value;
 
     console.log(name,surname,email,password,confirmPass,country,city);
-};
 
-// let result = checkUser (name,surname,email,password,confirmPass,country,city)
-// if(result === true)
+
+let result = validateNewUser (name,surname,email,password,confirmPass,country,city)
+    if(result === true){
+    createUserWithEmailAndPassword(email,password);}
+ 
+    
+    return document.getElementById('error').innerHTML = "error vacío"
+
+
+
+
+};

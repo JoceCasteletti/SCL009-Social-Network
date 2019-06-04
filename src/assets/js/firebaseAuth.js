@@ -1,8 +1,8 @@
-import { templateNewUser} from'./assets/views/templateNewUser.js';
+//import { templateNewUser} from'./assets/views/templateNewUser.js';
 
 //CREAR NUEVO USUARIO
 
-firebase.auth().createUserWithEmailAndPassword(email, password)
+export const firebaseAuth = firebase.auth().createUserWithEmailAndPassword(email, password)
 .catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;

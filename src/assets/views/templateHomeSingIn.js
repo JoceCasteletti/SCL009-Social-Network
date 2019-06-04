@@ -2,11 +2,11 @@ import { templateNewUser } from './templateNewUser.js'
 import { templatePost } from './templatePost.js'
 
 
-export const templateHomeSingIn = () =>{
+export const templateHomeSingIn = () => {
 
-document.getElementById('dinamicTemplates').innerHTML =
+   document.getElementById('root').innerHTML =
 
-    `<div class="containerSingIn"> 
+      `<div class="containerSingIn"> 
 <div id="titulo-signIn">
   <img src="" id="" alt=""/> 
   <h1>Patria Comunidad</h1>
@@ -37,16 +37,16 @@ document.getElementById('dinamicTemplates').innerHTML =
   </div>
   </div>
   `
-  
-  
 
-  document.getElementById('btn-new-user').addEventListener('click', () => {
-     templateNewUser();
-     window.location.hash = '#/new-user'
-  });
 
-  document.getElementById('btn-go').addEventListener('click', () => {
-     templatePost();
-     window.location.hash = '#/post'
-  });
+
+   document.getElementById('btn-new-user').addEventListener('click', () => {
+      templateNewUser();
+      window.location.hash = '#/new-user'
+   });
+
+   document.getElementById('btn-go').addEventListener('click', () => {
+      templatePost();
+      window.location.hash = '#/post'
+   });
 }

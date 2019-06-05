@@ -1,10 +1,10 @@
 import { initRouter } from './route.js';
-import {firebaseInit} from './assets/js/firebaseInit.js';
+import { firebaseInit } from './assets/js/firebaseInit.js';
 
 
    const init = ()=>{
         initRouter();
-       firebaseInit();
+        firebaseInit();
    }
 
    window.addEventListener('load', init);

@@ -2,7 +2,7 @@
 
 //CREAR NUEVO USUARIO
 
-export const crateUserFirebase = (email,password) =>
+export const createUserFirebase = (email,password) =>
 firebase.auth().createUserWithEmailAndPassword(email, password)
 .catch(function(error) {
     // Handle Errors here.

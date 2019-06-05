@@ -16,11 +16,14 @@ h3{
     text-align: center;
     color:#707575;
 }
-p{
+h4{
     margin:0px;
     margin-top:150px;
     text-align: center;
     color:#707575;
+}
+p{
+    margin-bottom: 0%;
 }
 .caja-texto{
     border-radius: 6px;
@@ -60,7 +63,7 @@ p{
     margin-top:20px;
 }
 
-#create-acc{
+#create-acc, #volver-home{
     color: white;
     background-color: #1e8b8b;
     border-color: #1e8b8b;
@@ -70,6 +73,7 @@ p{
     font-size: 15px;
     width: 60%;
     text-align: center;
+    margin-bottom: 1%;
 }
 
 .post{

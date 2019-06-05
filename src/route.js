@@ -9,10 +9,8 @@ const changeRoute = (hash) => {
 }
 
 const showTemplate = (hash) => {
-
     const router = hash.substring(2);
-
-    const containerTemplate = document.getElementById('dinamicTemplates');
+    const containerTemplate = document.getElementById('root');
     containerTemplate.innerHTML = '';
 
     switch (router) {
@@ -34,12 +32,17 @@ const showTemplate = (hash) => {
 };
 
 export const initRouter = () => {
-    //evento load cuando se cargue nuestra ventana)
+    //evento load cuando se cargue nuestra ventana
     window.addEventListener('load', changeRoute(window.location.hash));
+    // let containerRoot=document.getElementById('root');
+    // containerRoot.appendChild(window.location.hash);
     //detecta los cambios en html y saca el # y asi va cambiando templates
     if ('onhashchange' in window) {
-        window.addEventListener("hashchange", () => {
-            changeRoute(window.location.hash);
-        });
-    }
+        window.onhashchange = (e) =>{
+            e.preventDefault();
+            changeRoute(window.location.hash)
+     
+    }}
 };
+
+

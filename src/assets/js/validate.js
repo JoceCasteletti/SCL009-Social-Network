@@ -2,7 +2,7 @@
 export const validateNewUser = (name, surname, email, password, confirmPass, country, city) => {
     if (name === "" || surname === "" || email === "" || password === "" 
     || confirmPass === ""     || country === "" || city === ""
-	|| name.length <3 || password.length < 6 || password != confirmPass ) {
+	|| name.length <3 || password.length < 6 || password != confirmPass || !validateEmail(email) ) {
 		return false;
 	}
 	return true;
@@ -11,7 +11,7 @@ export const validateNewUser = (name, surname, email, password, confirmPass, cou
 //Validación de @ en email
 export const validateEmail = (email) => {
  let emailpattern = /\S+@\S+\.\S+/;
-	return validateEmail.test(email);
+	return emailpattern.test(email);
 }
 
 	

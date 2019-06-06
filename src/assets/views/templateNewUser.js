@@ -3,6 +3,7 @@ import { templateHomeSingIn } from './templateHomeSingIn.js';
 import { validateNewUser } from '../js/validate.js';
 import { createUserFirebase } from '../js/firebaseAuth.js';
 import { validateEmail } from '../js/validate.js';
+import { emailVerification} from '../js/firebaseAuth.js';
 
 
 
@@ -70,15 +71,19 @@ document.getElementById('create-acc').addEventListener('click', (e) => {
   //validar nuevo usario 
   let result = validateNewUser(name,surname,email,password,confirmPass,country,city);
   if(result === true){
-  createUserFirebase(email,password);
+  createUserFirebase(email,password)
+  .then(() =>{
+  emailVerification();
+  alert("te enviamos un email para verificar tu cuenta")
   console.log(result);
+ 
 
-  }
+  })};
 
  document.getElementById('volver-home').addEventListener('click', () => {
     templateHomeSingIn();
     window.location.hash = '#/home'
- })
+ });
 })};
 
 

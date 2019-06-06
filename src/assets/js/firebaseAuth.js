@@ -5,7 +5,7 @@
 export const createUserFirebase = (email,password) =>
 firebase.auth().createUserWithEmailAndPassword(email, password)
 .then(() => {
-sendVerification();
+emailVerification();
 alert("te enviamos un mail ctm")
 })
 .catch(function(error) {
@@ -16,7 +16,7 @@ alert("te enviamos un mail ctm")
   });
 
   //enviar correo de verificacion al nuevo usuario
-  function sendVerification() {
+  function emailVerification() {
     let user = firebase.auth().currentUser;
     user.sendEmailVerification().then(function() {
       console.log("enviamos un correo");

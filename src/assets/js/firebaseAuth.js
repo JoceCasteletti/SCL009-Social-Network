@@ -1,13 +1,9 @@
 // import { createemplateNewUser} from'./assets/views/templateNewUser.js';
 
-//CREAR NUEVO USUARIO
+//CREAR NUEVO USUARIO|
 
 export const createUserFirebase = (email,password) =>
 firebase.auth().createUserWithEmailAndPassword(email, password)
-.then(() => {
-emailVerification();
-alert("te enviamos un mail ctm")
-})
 .catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
@@ -16,7 +12,7 @@ alert("te enviamos un mail ctm")
   });
 
   //enviar correo de verificacion al nuevo usuario
-  function emailVerification() {
+  export function emailVerification() {
     let user = firebase.auth().currentUser;
     user.sendEmailVerification().then(function() {
       console.log("enviamos un correo");

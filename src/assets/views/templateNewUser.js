@@ -11,7 +11,7 @@ export const templateNewUser = () =>{
 
     document.getElementById('root').innerHTML =
     ` <div
-    <h1> Nuevo Usuario Patria </h1>
+    <h1> Nuevo Usuario Patria</h1>
     <form id="form-new-user">
     <p id="error-create"></p>
     <p id="error-create-name">
@@ -76,8 +76,6 @@ document.getElementById('create-acc').addEventListener('click', (e) => {
   emailVerification();
   alert("te enviamos un email para verificar tu cuenta")
   console.log(result);
- 
-
   })};
 
  document.getElementById('volver-home').addEventListener('click', () => {

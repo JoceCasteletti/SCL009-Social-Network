@@ -14,4 +14,6 @@ export const validateEmail = (email) => {
 	return emailpattern.test(email);
 }
 
+
+
 	

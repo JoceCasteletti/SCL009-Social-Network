@@ -61,7 +61,7 @@
  }
  #name{
     margin-top:20px;
- }#create-acc{
+ }#create-acc, #volver-home{
     color: white;
     background-color: #1e8b8b
  ;
@@ -73,6 +73,8 @@
     font-size: 15px;
     width: 60%;
     text-align: center;
+    margin-bottom: 2%;
+
  }.post{
     background-color:#c3dbdb
  ;

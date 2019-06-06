@@ -69,21 +69,8 @@ document.getElementById('create-acc').addEventListener('click', (e) => {
   let result = validateNewUser(name,surname,email,password,confirmPass,country,city);
   if(result === true){
   createUserFirebase(email,password);
-  
-//   }if(validateNewUser(name)=== false){
-//       document.getElementById("error-create-name").innerHTML = "error nombre"
-//   }if(validateNewUser(surname)=== false){
-//     document.getElementById("error-create-surname").innerHTML = "error nombre"
-//   }if(validateNewUser(email)=== false){
-//     document.getElementById("error-create-email").innerHTML = "error nombre"
-//   }if(validateNewUser(password)=== false){
-//     document.getElementById("error-create-password").innerHTML = "error nombre"
-//   }if(validateNewUser(confirmPass)=== false){
-//     document.getElementById("error-create-confirm").innerHTML = "error nombre"
-//   }if(validateNewUser(country)=== false){
-//     document.getElementById("error-create-country").innerHTML = "error nombre"
-//   }if(validateNewUser(city)=== false){
-//     document.getElementById("error-create-city").innerHTML = "error nombre"
+  console.log(result);
+
   }
 
  document.getElementById('volver-home').addEventListener('click', () => {

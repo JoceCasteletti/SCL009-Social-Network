@@ -1,6 +1,8 @@
 // import { templatePost } from './templatePost.js'
-// import { templateHomeSingIn } from './templateHomeSingIn.js'
-import { createNewUser } from '../js/authdom.js';
+import { templateHomeSingIn } from './templateHomeSingIn.js';
+import { validateNewUser } from '../js/validate.js';
+import { createUserFirebase } from '../js/firebaseAuth.js';
+import { validateEmail } from '../js/validate.js';
 
 export const templateNewUser = () =>{
 
@@ -8,24 +10,87 @@ export const templateNewUser = () =>{
     ` <div
     <h1> Nuevo Usuario Patria </h1>
     <form id="form-new-user">
-    <div id="error-create-name"><input id="name" type="text" class="info-new" placeholder="Nombre"></div>
-    <div id="error-create-surname"><input id="surname" type="text" class="info-new"" placeholder="Apellido"></div>
-    <div id="error-create-email"><input id="email-new-user" type="text" class="info-new"" placeholder="Email"></div>
-    <div id="error-create-password"><input id="password-new.user" type="password" class="info-new"" placeholder="Contraseña 6 dígitos"></div>
-    <div id="error-create-confirm"><input id="confirm-pass" type="password" class="info-new"" placeholder="Confirmar contraseña 6 dígitos"></div>
-    <div id="error-create-country"><input id="country" type="text" class="info-new"" placeholder="Pais"></div>
-    <div id="error-create-city"><input id="city" type="text" class="info-new"" placeholder="Ciudad"></div>
-    <button id="create-acc" type="button" class="">Crear Cuenta </button>
+    <p id="error-create"></p>
+    <p id="error-create-name">
+    <div id="create-name"><input id="name" type="text" class="info-new" placeholder="Nombre"/></div>
+    <p id="error-create-surname"></p>
+    <div id="create-surname"><input id="surname" type="text" class="info-new"" placeholder="Apellido" /</div>
+    <p id="error-create-email"></p>
+    <div id="create-email"><input id="email-new-user" type="email" class="info-new"" placeholder="Email" /</div>
+    <p id="error-create-password"></p>
+    <div id="create-password"><input id="password-new.user" type="password" class="info-new"" placeholder="Contraseña 6 dígitos" /</div>
+    <p id="error-create-confirm"></p>
+    <div id="create-confirm"><input id="confirm-pass" type="password" class="info-new"" placeholder="Confirmar contraseña 6 dígitos" /</div>
+    <p id="error-create-country"></p>
+    <div id="error-create-country"><input id="country" type="text" class="info-new"" placeholder="Pais" /</div>
+    <p id="error-create-city"></p>
+    <div id="error-create-city"><input id="city" type="text" class="info-new"" placeholder="Ciudad" /</div>
+    <button id="create-acc" type="submit" class="">Crear Cuenta </button>
+    <button id="volver-home" type="button" class="">Volver</button>
     </form>
     </div>`
 
-document.getElementById('create-acc').addEventListener('click', () => {
-    createNewUser();
+document.getElementById('create-acc').addEventListener('click', (e) => {   
+    e.preventDefault();
+    let name= document.getElementById('name').value;
+    let surname= document.getElementById('surname').value;
+    let email= document.getElementById('email-new-user').value;
+    let password= document.getElementById('password-new.user').value;
+    let confirmPass= document.getElementById('confirm-pass').value;
+    let country= document.getElementById('country').value;
+    let city= document.getElementById('city').value;
 
- });
+    console.log(name,surname,email,password,confirmPass,country,city);
 
-//  document.getElementById('btn').addEventListener('click', () => {
-//     templateHomeSingIn();
-//     window.location.hash = '#/home'
-//  })
-}
+    if (name === "" || name.length <3 ){
+        document.getElementById("error-create-name").innerHTML = "Ingresa nombre válido"
+    }
+     if(surname === "" || surname.length <3){
+        document.getElementById("error-create-surname").innerHTML = "Ingresa apellido válido"
+     }
+     if(email === ""  || !validateEmail(email)){
+        document.getElementById("error-create-email").innerHTML = "Ingresa email válido"
+     }
+      if(password === ""  || password.length < 6 ){
+        document.getElementById("error-create-password").innerHTML = "Ingresa contraseña válida"
+     }
+     if(confirmPass === "" || password != confirmPass ){
+        document.getElementById("error-create-confirm").innerHTML = "Contreaseña no coinciden"
+    }
+     if(country === "" ||  country.length <3 ){
+        document.getElementById("error-create-country").innerHTML = "Ingresa país valido"
+    }
+     if(city === "" ||  city.length <3 ){
+        document.getElementById("error-create-city").innerHTML = "Ingresa ciudad válida"
+    };
+ 
+
+  //validar nuevo usario 
+  let result = validateNewUser(name,surname,email,password,confirmPass,country,city);
+  if(result === true){
+  createUserFirebase(email,password);
+  
+//   }if(validateNewUser(name)=== false){
+//       document.getElementById("error-create-name").innerHTML = "error nombre"
+//   }if(validateNewUser(surname)=== false){
+//     document.getElementById("error-create-surname").innerHTML = "error nombre"
+//   }if(validateNewUser(email)=== false){
+//     document.getElementById("error-create-email").innerHTML = "error nombre"
+//   }if(validateNewUser(password)=== false){
+//     document.getElementById("error-create-password").innerHTML = "error nombre"
+//   }if(validateNewUser(confirmPass)=== false){
+//     document.getElementById("error-create-confirm").innerHTML = "error nombre"
+//   }if(validateNewUser(country)=== false){
+//     document.getElementById("error-create-country").innerHTML = "error nombre"
+//   }if(validateNewUser(city)=== false){
+//     document.getElementById("error-create-city").innerHTML = "error nombre"
+  }
+
+ document.getElementById('volver-home').addEventListener('click', () => {
+    templateHomeSingIn();
+    window.location.hash = '#/home'
+ })
+})};
+
+
+   

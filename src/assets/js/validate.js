@@ -2,18 +2,16 @@
 export const validateNewUser = (name, surname, email, password, confirmPass, country, city) => {
     if (name === "" || surname === "" || email === "" || password === "" 
     || confirmPass === ""     || country === "" || city === ""
-	|| password.length < 6 || password != confirmPass ) {
-		//return false;
-		console.log('dddd');
+	|| name.length <3 || password.length < 6 || password != confirmPass || !validateEmail(email) ) {
+		return false;
 	}
 	return true;
 }
 
 //Validación de @ en email
-//export const checkAtEmail = (email) => {
-	//let checkAt = /\S+@\S+\.\S+/;
-	//return checkAt.test(email);
-  
-//}
+export const validateEmail = (email) => {
+ let emailpattern = /\S+@\S+\.\S+/;
+	return emailpattern.test(email);
+}
 
 	

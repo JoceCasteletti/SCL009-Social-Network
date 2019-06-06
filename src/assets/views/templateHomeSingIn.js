@@ -18,7 +18,7 @@ export const templateHomeSingIn = () => {
        <input type="text" id="email" class="caja-texto form-control" placeholder="Ingresa tu mail" required></input>
      </div>
      <div>
-     <input type="password" id="password" class="caja-texto form-control" placeholder="Ingresa tu contraseña" required></input>
+     <input type="text" id="password" class="caja-texto form-control" placeholder="Ingresa tu contraseña" required></input>
   </div>
   </div>
   <div class="btns-option">
@@ -32,7 +32,7 @@ export const templateHomeSingIn = () => {
      </div>
   
   <div id="createAcc">
-  <p>¿Aún no tienes cuenta?</p>
+  <h4>¿Aún no tienes cuenta?</h4>
   <button id="btn-new-user" type="button">Crear Cuenta</button>
   </div>
   </div>

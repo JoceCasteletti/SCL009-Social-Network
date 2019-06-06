@@ -4,6 +4,8 @@ import { validateNewUser } from '../js/validate.js';
 import { createUserFirebase } from '../js/firebaseAuth.js';
 import { validateEmail } from '../js/validate.js';
 
+
+
 export const templateNewUser = () =>{
 
     document.getElementById('root').innerHTML =

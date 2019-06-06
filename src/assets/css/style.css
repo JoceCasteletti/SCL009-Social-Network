@@ -63,8 +63,10 @@
     margin-top:20px;
  }#create-acc, #volver-home{
     color: white;
-    background-color: #1e8b8b;
-    border-color: #1e8b8b;
+    background-color: #1e8b8b
+ ;
+    border-color: #1e8b8b
+ ;
     border-radius: 10px;
     padding:10px;;
     font-family: 'Josefin Sans', sans-serif;

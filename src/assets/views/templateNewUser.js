@@ -13,7 +13,6 @@ export const templateNewUser = () =>{
     ` <div
     <h1> Nuevo Usuario Patria</h1>
     <form id="form-new-user">
-    <p id="error-create"></p>
     <p id="error-create-name">
     <div id="create-name"><input id="name" type="text" class="info-new" placeholder="Nombre"/></div>
     <p id="error-create-surname"></p>

@@ -1,7 +1,8 @@
+import { observer } from '../js/firebaseAuth.js';
 import { templateNewUser } from './templateNewUser.js'
 import { templatePost } from './templatePost.js'
 import { signInGmail } from '../js/firebaseAuth.js';
-import { observer } from '../js/firebaseAuth.js';
+
 export const templateHomeSingIn = () => {
    observer()
    document.getElementById('root').innerHTML =

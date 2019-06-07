@@ -40,10 +40,11 @@ export const  signInGmail=()=> {
       let credential = error.credential;
       // ...
     }); 
+  }
 
     //onAuthStateChanged metodo Observador
 
-    export const observer=() =>{
+    export const observer =() =>{
       firebase.auth().onAuthStateChanged(function(user) {
      if (user) {
       console.log(user.displayName)
@@ -54,8 +55,8 @@ export const  signInGmail=()=> {
       window.location.hash = '';
       // No user is signed in.
      }
-     })
-     }
+     });
+    }
 
  
-  }
+  

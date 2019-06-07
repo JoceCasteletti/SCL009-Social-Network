@@ -1,12 +1,14 @@
+// import { observer } from '../js/firebaseAuth.js';
 import { templateNewUser } from './templateNewUser.js'
 import { templatePost } from './templatePost.js'
 import { signInGmail} from '../js/firebaseAuth.js';
 import { validateSingIn } from '../js/validate.js';
-import { validateEmail } from '../js/validate.js';
+// import { validateEmail } from '../js/validate.js';
 import { singInFireBase } from '../js/firebaseAuth.js';
 
 export const templateHomeSingIn = () => {
 
+   // observer()
    document.getElementById('root').innerHTML =
 
 `<div class="logo">
@@ -42,19 +44,20 @@ export const templateHomeSingIn = () => {
 
    console.log(userMail,userPass);
 
-   if(userEmail === "" || !validateEmail(userMail)){
+   if (userEmail === ""){
       document.getElementById("error-user-email").innerHTML = "Correo no válido"
-   };
-   if(userPass === "" || userPass < 6){
+   }
+   if (userPass === "" || userPass < 6){
       document.getElementById("error-user-pass").innerHTML = "Contraseña no válida"
    };
+
    let singIn = validateSingIn(userMail,userPass);
     if(singIn === true){
        singInFireBase(userMail,userPass);
        templatePost();
        window.location.hash = '#/post'
-    }
-   });
+
+    }});
    
    document.getElementById('sign-in-gmail').addEventListener('click', () => {
       signInGmail();

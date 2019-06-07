@@ -5,8 +5,6 @@ import { createUserFirebase } from '../js/firebaseAuth.js';
 import { validateEmail } from '../js/validate.js';
 import { emailVerification} from '../js/firebaseAuth.js';
 
-
-
 export const templateNewUser = () =>{
 
     document.getElementById('root').innerHTML =
@@ -71,17 +69,16 @@ document.getElementById('create-acc').addEventListener('click', (e) => {
   let result = validateNewUser(name,surname,email,password,confirmPass,country,city);
   if(result === true){
   createUserFirebase(email,password)
-  .then(() =>{
   emailVerification();
   alert("te enviamos un email para verificar tu cuenta")
   console.log(result);
-  })};
+  }})};
 
  document.getElementById('volver-home').addEventListener('click', () => {
     templateHomeSingIn();
     window.location.hash = '#/home'
  });
-})};
+
 
 
    

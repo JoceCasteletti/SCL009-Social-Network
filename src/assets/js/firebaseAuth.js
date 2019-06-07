@@ -40,6 +40,23 @@ export const  signInGmail=()=> {
       let credential = error.credential;
       // ...
     }); 
+  }
+
+    //onAuthStateChanged metodo Observador
+
+    // export const observer =() =>{
+    //   firebase.auth().onAuthStateChanged(function(user) {
+    //  if (user) {
+    //   console.log(user.displayName)
+    //   window.location.hash = '#/post';
+    //   // User is signed in.
+    //  } else {
+    //   console.log("No existe usuario logueado")
+    //   window.location.hash = '';
+    //   // No user is signed in.
+    //  }
+    //  });
+    // }
 
     export const singInFireBase = (email, password) => {
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
@@ -48,5 +65,7 @@ export const  signInGmail=()=> {
       var errorMessage = error.message;
       // ...
     });
-  }};
+  };
     
+ 
+  

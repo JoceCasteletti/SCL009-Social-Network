@@ -3,12 +3,15 @@ import { templateHomeSingIn } from './templateHomeSingIn.js';
 import { validateNewUser } from '../js/validate.js';
 import { createUserFirebase } from '../js/firebaseAuth.js';
 import { validateEmail } from '../js/validate.js';
+import { emailVerification} from '../js/firebaseAuth.js';
+
+
 
 export const templateNewUser = () =>{
 
     document.getElementById('root').innerHTML =
     ` <div
-    <h1> Nuevo Usuario Patria </h1>
+    <h1> Nuevo Usuario Patria</h1>
     <form id="form-new-user">
     <p id="error-create"></p>
     <p id="error-create-name">
@@ -68,15 +71,17 @@ document.getElementById('create-acc').addEventListener('click', (e) => {
   //validar nuevo usario 
   let result = validateNewUser(name,surname,email,password,confirmPass,country,city);
   if(result === true){
-  createUserFirebase(email,password);
+  createUserFirebase(email,password)
+  .then(() =>{
+  emailVerification();
+  alert("te enviamos un email para verificar tu cuenta")
   console.log(result);
-
-  }
+  })};
 
  document.getElementById('volver-home').addEventListener('click', () => {
     templateHomeSingIn();
     window.location.hash = '#/home'
- })
+ });
 })};
 
 

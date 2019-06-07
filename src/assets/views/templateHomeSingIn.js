@@ -1,7 +1,6 @@
 import { templateNewUser } from './templateNewUser.js'
 import { templatePost } from './templatePost.js'
-
-
+import { signInGmail} from '../js/firebaseAuth.js';
 export const templateHomeSingIn = () => {
 
    document.getElementById('root').innerHTML =
@@ -26,7 +25,7 @@ export const templateHomeSingIn = () => {
      <button type="submit" id="btn-go" >Entrar</button>
      </div>
      <div>
-     <button type="submit" id="btn-google" >Iniciar con Google</button>
+     <button type="button" id="sign-in-gmail" >Iniciar con Google</button>
   </div>
   </form>
      </div>
@@ -49,4 +48,8 @@ export const templateHomeSingIn = () => {
       templatePost();
       window.location.hash = '#/post'
    });
+   
+   document.getElementById('sign-in-gmail').addEventListener('click', () => {
+      signInGmail();
+   })
 }

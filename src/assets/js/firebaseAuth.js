@@ -41,5 +41,21 @@ export const  signInGmail=()=> {
       // ...
     }); 
 
+    //onAuthStateChanged metodo Observador
+
+    export const observer=() =>{
+      firebase.auth().onAuthStateChanged(function(user) {
+     if (user) {
+      console.log(user.displayName)
+      window.location.hash = '#/post';
+      // User is signed in.
+     } else {
+      console.log("No existe usuario logueado")
+      window.location.hash = '';
+      // No user is signed in.
+     }
+     })
+     }
+
  
   }

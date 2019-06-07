@@ -1,4 +1,3 @@
-
 //CREAR NUEVO USUARIO|
 export const createUserFirebase = (email,password) =>
 firebase.auth().createUserWithEmailAndPassword(email, password)

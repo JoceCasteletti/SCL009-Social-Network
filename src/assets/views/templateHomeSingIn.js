@@ -25,8 +25,7 @@ export const templateHomeSingIn = () => {
                   </div>
                   <div class="form-group">
                      <button type="button" id="btn-go" >Entrar</button>
-                     <button type="button" id="sign-in-gmail" ><p id="google">Iniciar con Google</p>
-                    <img class="icon" src="assets/img/logo-google.png"</img></button>
+                     <button type="button" id="sign-in-gmail" >Iniciar con Google</button>
                   </div>
                </div>               
             </form>

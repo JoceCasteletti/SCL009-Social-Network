@@ -51,20 +51,11 @@ body {
     border-color: #b90303;
     margin-bottom:1%;
     border-radius: 10px;
-    padding:2%;
+    padding:10px;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 15px;
-    text-align: center;
  }
- .icon{
-    width: 15%;
-    float: left;
- }
- #google{
-   justify-content: center;
-   display: inline-block;
-   padding-top: 5%;
- }
+
  #btn-new-user {
     background-color: transparent;
     border-style: none;

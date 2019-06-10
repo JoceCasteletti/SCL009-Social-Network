@@ -1,60 +1,67 @@
-import { observer } from '../js/firebaseAuth.js';
-import { templateNewUser } from './templateNewUser.js'
-// import { templatePost } from './templatePost.js'
-import { signInGmail} from '../js/firebaseAuth.js';
-
+import { signInWithEmailAndPassword } from '../js/firebaseAuth.js';
+import { signInGmail } from '../js/firebaseAuth.js';
+import { validateEmail } from '../js/validate.js';
 
 export const templateHomeSingIn = () => {
-   observer();
    document.getElementById('root').innerHTML =
 
-`<div class="logo">
-  <img src="" id="" alt=""/>
-</div>
-<div id="text-titulo">
-  <h1>Patria Comunidad</h1>
-  <h3>Tips para facilitar tu viaje</h3>
-</div>
-<form>
-   <div class="inputs-sing-in">
-      <p id="error-user-email">
-      <input type="text" id="email-user" class="caja-texto form-control" placeholder="Ingresa tu mail" required></input>
-      <p id="error-user-pass">
-      <input type="text" id="pass-user" class="caja-texto form-control" placeholder="Ingresa tu contraseña" required></input>
-   </div>
-   <div class="btns-option-sing-in">
-     <button type="submit" id="btn-go" >Entrar</button>
-     <button type="button" id="sign-in-gmail" >Iniciar con Google</button>
-   </div>
-</form>
+      `<div class="containerSingIn"> 
+         <div id="titulo-signIn" class="flex-center">
+            <img src="" id="" alt=""/> 
+            <h1>Patria Comunidad</h1>
+            <h3>Tips para facilitar tu viaje</h3>
+         </div>
+         <div class="flex-center inputs">
+            <form>
+               <div class="flex-center">
+                  <div class="form-group">
+                     <input type="text" id="email" class="caja-texto form-control" placeholder="Ingresa tu mail" required></input>
+                     <div id="error-email" class="error"></div>
+                  </div>
+                  <div class="form-group">
+                     <input type="password" id="password" class="caja-texto form-control" placeholder="Ingresa tu contraseña" required></input>
+                     <div id="error-password" class="error"></div>
+                  </div>
+                  <div class="form-group">
+                     <button type="button" id="btn-go" >Entrar</button>
+                     <button type="button" id="sign-in-gmail" >Iniciar con Google</button>
+                  </div>
+               </div>               
+            </form>
+         </div>
+         <div id="createAcc" class="flex-center">
+            <h4>¿Aún no tienes cuenta?</h4>
+            <button id="btn-new-user" type="button">Crear Cuenta</button>
+         </div>
+      </div>`
 
-<div id="createAcc">
-  <h4>¿Aún no tienes cuenta?</h4>
-  <button id="btn-new-user" type="button">Crear Cuenta</button>
-</div>`
+   document.getElementById('btn-new-user').addEventListener('click', () => {
+      window.location.hash = '#/new-user'
+   });
 
- 
-   document.getElementById('btn-go').addEventListener('click', (e) => {
-   e.preventDefault();
-   // let userMail = document.getElementById("email-user").value;
-   // let userPass = document.getElementById("pass-user").value;
+   document.getElementById('btn-go').addEventListener('click', () => {
+      document.getElementById("error-email").innerHTML = '';
+      document.getElementById("error-password").innerHTML = '';
 
-   // console.log(userMail,userPass);
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value
 
-   // if (userEmail === ""){
-   //    document.getElementById("error-user-email").innerHTML = "Correo no válido"
-   // }
-   // if (userPass === "" || userPass < 6){
-   //    document.getElementById("error-user-pass").innerHTML = "Contraseña no válida"
-   // };
+      if (validateEmail(email) && password.length >= 6) {
+         signInWithEmailAndPassword(email, password).catch(() => {
+            alert('Credencial incorrecta');
+         });
+      } else {
+         if (!validateEmail(email)) {
+            document.getElementById('error-email').innerHTML = 'Ingresa email válido';
+         }
+         
+         if (password.length < 6) {
+            document.getElementById('error-password').innerHTML = 'La contraseña debe tener al menos 6 caracteres';
+         }
+      }
 
-   // let singIn = validateSingIn(userMail,userPass);
-   //  if(singIn === true){
-   //     singInFireBase(userMail,userPass);
-   //     templatePost();
-   //     window.location.hash = '#/post'
-
-   //  }});
+      
+   });
    
    document.getElementById('sign-in-gmail').addEventListener('click', () => {
       signInGmail();
@@ -65,4 +72,4 @@ export const templateHomeSingIn = () => {
       templateNewUser();
       window.location.hash = '#/new-user'
    });
-})};
+};

@@ -45,12 +45,7 @@ export const signInGmail = () => {
 
 // Iniciar sesión con credencial
 export const signInWithEmailAndPassword = (email, password) => {
-  firebase.auth().signInWithEmailAndPassword(email, password)
-  .then(function (data) {
-    console.log('signInWithEmailAndPassword', 'OK', data);
-  }).catch(function (error) {
-    console.error('signInWithEmailAndPassword', 'error', error);
-  })
+  return firebase.auth().signInWithEmailAndPassword(email, password);
 }
 
 //onAuthStateChanged metodo Observador
@@ -58,7 +53,6 @@ export const signInWithEmailAndPassword = (email, password) => {
 export const observer = () => {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-      console.log(user)
       window.location.hash = '#/post';
       // User is signed in.
     } else {

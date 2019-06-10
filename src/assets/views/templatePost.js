@@ -1,11 +1,11 @@
 
-import { templateNewUser } from './templateNewUser.js'
-import { templateHomeSingIn } from './templateHomeSingIn.js'
+import { signOut } from '../js/firebaseAuth.js';
 
 export const templatePost = () => {
 
     document.getElementById('root').innerHTML =
-`
+        `
+<button id="signout">Cerrar sesión</button>
 <div>
 <div id="profile">
 <img src="" id="" alt=""/> 
@@ -44,6 +44,12 @@ export const templatePost = () => {
 <button class"btn-like">Like</button>
 </form>
 </div>`
+
+    document.getElementById('signout').addEventListener('click', () => {
+        signOut();
+    })
+
+
 }
 // document.getElementById("btn-home").addEventListener('click', () => {
 //     templateHomeSingIn();

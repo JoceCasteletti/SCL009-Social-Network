@@ -1,5 +1,6 @@
 import { validateNewUser } from '../src/assets/js/validate.js';
 import { validateEmail } from '../src/assets/js/validate.js';
+import { validateSignInWithEmailAndPassword } from '../src/assets/js/validate.js';
 
 describe('validateNewUser',()=>{
     it('deberia retornar false si el usuario no ingresa nombre',()=>{
@@ -19,3 +20,20 @@ describe('validateNewUser',()=>{
       expect(validateEmail ('juan.perez.gmail.com')).toBe(false);        
     });
   });
+
+
+
+/*validaciones para el inicio de sesion*/
+describe("validateSignInWithEmailAndPassword",()=>{
+  it('deberia retornar true, si el usuario ingresa todos los campos',()=>{
+      expect(validateSignInWithEmailAndPassword("blabla@gmail.com","blablabla"))
+      .toBe(true);
+  })
+})
+
+describe("validateSignInWithEmailAndPassword",()=>{
+  it('deberia retornar false, si el usuario no ingresa ningún cambio',()=>{
+      expect(validateSignInWithEmailAndPassword("",""))
+      .toBe(false);
+  })
+})

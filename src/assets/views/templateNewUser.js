@@ -1,4 +1,3 @@
-// import { templatePost } from './templatePost.js'
 import { templateHomeSingIn } from './templateHomeSingIn.js';
 import { validateNewUser } from '../js/validate.js';
 import { createUserFirebase } from '../js/firebaseAuth.js';
@@ -72,10 +71,11 @@ document.getElementById('create-acc').addEventListener('click', (e) => {
   emailVerification();
   alert("te enviamos un email para verificar tu cuenta")
   console.log(result);
-  }})};
+}}
+)};
 
  document.getElementById('volver-home').addEventListener('click', () => {
-    templateHomeSingIn();
+   templateHomeSingIn();
     window.location.hash = '#/home'
  });
 

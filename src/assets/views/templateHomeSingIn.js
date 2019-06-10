@@ -1,14 +1,11 @@
-// import { observer } from '../js/firebaseAuth.js';
+import { observer } from '../js/firebaseAuth.js';
 import { templateNewUser } from './templateNewUser.js'
-import { templatePost } from './templatePost.js'
+// import { templatePost } from './templatePost.js'
 import { signInGmail} from '../js/firebaseAuth.js';
-import { validateSingIn } from '../js/validate.js';
-// import { validateEmail } from '../js/validate.js';
-import { singInFireBase } from '../js/firebaseAuth.js';
+
 
 export const templateHomeSingIn = () => {
-
-   // observer()
+   observer();
    document.getElementById('root').innerHTML =
 
 `<div class="logo">
@@ -39,32 +36,33 @@ export const templateHomeSingIn = () => {
  
    document.getElementById('btn-go').addEventListener('click', (e) => {
    e.preventDefault();
-   let userMail = document.getElementById("email-user").value;
-   let userPass = document.getElementById("pass-user").value;
+   // let userMail = document.getElementById("email-user").value;
+   // let userPass = document.getElementById("pass-user").value;
 
-   console.log(userMail,userPass);
+   // console.log(userMail,userPass);
 
-   if (userEmail === ""){
-      document.getElementById("error-user-email").innerHTML = "Correo no válido"
-   }
-   if (userPass === "" || userPass < 6){
-      document.getElementById("error-user-pass").innerHTML = "Contraseña no válida"
-   };
+   // if (userEmail === ""){
+   //    document.getElementById("error-user-email").innerHTML = "Correo no válido"
+   // }
+   // if (userPass === "" || userPass < 6){
+   //    document.getElementById("error-user-pass").innerHTML = "Contraseña no válida"
+   // };
 
-   let singIn = validateSingIn(userMail,userPass);
-    if(singIn === true){
-       singInFireBase(userMail,userPass);
-       templatePost();
-       window.location.hash = '#/post'
+   // let singIn = validateSingIn(userMail,userPass);
+   //  if(singIn === true){
+   //     singInFireBase(userMail,userPass);
+   //     templatePost();
+   //     window.location.hash = '#/post'
 
-    }});
+   //  }});
    
    document.getElementById('sign-in-gmail').addEventListener('click', () => {
       signInGmail();
+      
    })
 
    document.getElementById('btn-new-user').addEventListener('click', () => {
       templateNewUser();
       window.location.hash = '#/new-user'
    });
-}
+})};

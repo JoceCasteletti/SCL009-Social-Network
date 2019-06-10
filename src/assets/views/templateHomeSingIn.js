@@ -8,7 +8,7 @@ export const templateHomeSingIn = () => {
 
       `<div class="containerSingIn"> 
          <div id="titulo-signIn" class="flex-center">
-            <img src="" id="" alt=""/> 
+            <img src='assets/img/logo-sin-fondo.png' id="logo" alt="logo"/> 
             <h1>Patria Comunidad</h1>
             <h3>Tips para facilitar tu viaje</h3>
          </div>

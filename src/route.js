@@ -3,9 +3,7 @@ import { templateNewUser } from './assets/views/templateNewUser.js'
 import { templatePost } from './assets/views/templatePost.js'
 
 const changeRoute = (hash) => {
-    if (hash === '.#/new-user' || hash === '.#/post' || hash === '.#/home' || hash === '' || hash === './#' || hash === '.#/') {
-        return showTemplate(hash)
-    }
+    return showTemplate(hash)
 }
 
 const showTemplate = (hash) => {
@@ -38,11 +36,17 @@ export const initRouter = () => {
     // containerRoot.appendChild(window.location.hash);
     //detecta los cambios en html y saca el # y asi va cambiando templates
     if ('onhashchange' in window) {
-        window.onhashchange = (e) =>{
+        window.onhashchange = (e) => {
             e.preventDefault();
+            console.log(window.location.hash)
             changeRoute(window.location.hash)
-     
-    }}
+        };
+
+        // window.addEventListener('hashchange', (e) => {
+        //     e.preventDefault();
+        //     changeRoute(window.location.hash)
+        // });
+    }
 };
 
 

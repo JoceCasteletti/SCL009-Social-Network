@@ -19,6 +19,9 @@ describe('validateNewUser',()=>{
     it('deberia retornar false si el correo no cumple con los parametros',()=>{
       expect(validateEmail ('juan.perez.gmail.com')).toBe(false);        
     });
+    it('deberia retornar true si el correo  cumple con los parametros',()=>{
+      expect(validateEmail ('juan.perez@gmail.com')).toBe(true);        
+    });
   });
 
 

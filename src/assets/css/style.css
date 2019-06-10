@@ -35,7 +35,7 @@ body {
     width:60%;
  }
 
- #btn-go, #btn-google {
+ #btn-go {
     color: white;
     background-color: #1e8b8b;
     border-color: #1e8b8b;
@@ -45,7 +45,26 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 15px;
  }
-
+ #sign-in-gmail{
+    color: white;
+    background-color: #b90303;
+    border-color: #b90303;
+    margin-bottom:1%;
+    border-radius: 10px;
+    padding:2%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    text-align: center;
+ }
+ .icon{
+    width: 15%;
+    float: left;
+ }
+ #google{
+   justify-content: center;
+   display: inline-block;
+   padding-top: 5%;
+ }
  #btn-new-user {
     background-color: transparent;
     border-style: none;

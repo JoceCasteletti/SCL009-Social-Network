@@ -1,6 +1,7 @@
 import { signInWithEmailAndPassword } from '../js/firebaseAuth.js';
 import { signInGmail } from '../js/firebaseAuth.js';
 import { validateEmail } from '../js/validate.js';
+import { validateSignInWithEmailAndPassword } from '../js/validate.js'
 
 export const templateHomeSingIn = () => {
    document.getElementById('root').innerHTML =
@@ -24,7 +25,8 @@ export const templateHomeSingIn = () => {
                   </div>
                   <div class="form-group">
                      <button type="button" id="btn-go" >Entrar</button>
-                     <button type="button" id="sign-in-gmail" >Iniciar con Google</button>
+                     <button type="button" id="sign-in-gmail" ><p id="google">Iniciar con Google</p>
+                    <img class="icon" src="assets/img/logo-google.png"</img></button>
                   </div>
                </div>               
             </form>
@@ -47,19 +49,13 @@ export const templateHomeSingIn = () => {
       let passwordUser = document.getElementById('password-user').value
 
    
-     
          if (!validateEmail(emailUser)) {
             document.getElementById('error-email').innerHTML = 'Ingresa email válido';
          }
-         
          if (passwordUser.length < 6) {
             document.getElementById('error-password').innerHTML = 'La contraseña debe tener al menos 6 caracteres';
          }
-      })
-
-    
-
-
+     
     //validar nuevo usario 
     let goIn = validateSignInWithEmailAndPassword(emailUser, passwordUser);
     if (goIn === true) {
@@ -68,6 +64,7 @@ export const templateHomeSingIn = () => {
             alert('Tu usuario no es vàlido');
          });
       };
+   });
    
    document.getElementById('sign-in-gmail').addEventListener('click', () => {
       signInGmail();

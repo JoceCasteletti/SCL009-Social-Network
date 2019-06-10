@@ -53,6 +53,7 @@ export const signInWithEmailAndPassword = (email, password) => {
 export const observer = () => {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
+      console.log(user)
       window.location.hash = '#/post';
       // User is signed in.
     } else {

@@ -3,12 +3,12 @@ import { templateHomeSingIn } from './templateHomeSingIn.js';
 import { validateNewUser } from '../js/validate.js';
 import { createUserFirebase } from '../js/firebaseAuth.js';
 import { validateEmail } from '../js/validate.js';
-import { emailVerification} from '../js/firebaseAuth.js';
+import { emailVerification } from '../js/firebaseAuth.js';
 
-export const templateNewUser = () =>{
+export const templateNewUser = () => {
 
-    document.getElementById('root').innerHTML =
-    ` <div
+   document.getElementById('root').innerHTML =
+      ` <div
     <h1> Nuevo Usuario Patria</h1>
     <form id="form-new-user">
     <p id="error-create"></p>
@@ -31,56 +31,58 @@ export const templateNewUser = () =>{
     </form>
     </div>`
 
-document.getElementById('create-acc').addEventListener('click', (e) => {   
-    e.preventDefault();
-    let name= document.getElementById('name').value;
-    let surname= document.getElementById('surname').value;
-    let email= document.getElementById('email-new-user').value;
-    let password= document.getElementById('password-new.user').value;
-    let confirmPass= document.getElementById('confirm-pass').value;
-    let country= document.getElementById('country').value;
-    let city= document.getElementById('city').value;
+   document.getElementById('create-acc').addEventListener('click', (e) => {
+      e.preventDefault();
+      let name = document.getElementById('name').value;
+      let surname = document.getElementById('surname').value;
+      let email = document.getElementById('email-new-user').value;
+      let password = document.getElementById('password-new.user').value;
+      let confirmPass = document.getElementById('confirm-pass').value;
+      let country = document.getElementById('country').value;
+      let city = document.getElementById('city').value;
 
-    console.log(name,surname,email,password,confirmPass,country,city);
+      console.log(name, surname, email, password, confirmPass, country, city);
 
-    if (name === "" || name.length <3 ){
-        document.getElementById("error-create-name").innerHTML = "Ingresa nombre válido"
-    }
-     if(surname === "" || surname.length <3){
-        document.getElementById("error-create-surname").innerHTML = "Ingresa apellido válido"
-     }
-     if(email === ""  || !validateEmail(email)){
-        document.getElementById("error-create-email").innerHTML = "Ingresa email válido"
-     }
-      if(password === ""  || password.length < 6 ){
-        document.getElementById("error-create-password").innerHTML = "Ingresa contraseña válida"
-     }
-     if(confirmPass === "" || password != confirmPass ){
-        document.getElementById("error-create-confirm").innerHTML = "Contreaseña no coinciden"
-    }
-     if(country === "" ||  country.length <3 ){
-        document.getElementById("error-create-country").innerHTML = "Ingresa país valido"
-    }
-     if(city === "" ||  city.length <3 ){
-        document.getElementById("error-create-city").innerHTML = "Ingresa ciudad válida"
-    };
- 
-
-  //validar nuevo usario 
-  let result = validateNewUser(name,surname,email,password,confirmPass,country,city);
-  if(result === true){
-  createUserFirebase(email,password)
-  .then(() =>{
-  emailVerification();
-  alert("te enviamos un email para verificar tu cuenta")
-  console.log(result);
-  })};
-
- document.getElementById('volver-home').addEventListener('click', () => {
-    templateHomeSingIn();
-    window.location.hash = '#/home'
- });
-})};
+      if (name === "" || name.length < 3) {
+         document.getElementById("error-create-name").innerHTML = "Ingresa nombre válido"
+      }
+      if (surname === "" || surname.length < 3) {
+         document.getElementById("error-create-surname").innerHTML = "Ingresa apellido válido"
+      }
+      if (email === "" || !validateEmail(email)) {
+         document.getElementById("error-create-email").innerHTML = "Ingresa email válido"
+      }
+      if (password === "" || password.length < 6) {
+         document.getElementById("error-create-password").innerHTML = "Ingresa contraseña válida"
+      }
+      if (confirmPass === "" || password != confirmPass) {
+         document.getElementById("error-create-confirm").innerHTML = "Contreaseña no coinciden"
+      }
+      if (country === "" || country.length < 3) {
+         document.getElementById("error-create-country").innerHTML = "Ingresa país valido"
+      }
+      if (city === "" || city.length < 3) {
+         document.getElementById("error-create-city").innerHTML = "Ingresa ciudad válida"
+      };
 
 
-   
+      //validar nuevo usario 
+      let result = validateNewUser(name, surname, email, password, confirmPass, country, city);
+      if (result === true) {
+         createUserFirebase(email, password)
+            .then(() => {
+               emailVerification();
+               alert("te enviamos un email para verificar tu cuenta")
+               console.log(result);
+            })
+      };
+
+      document.getElementById('volver-home').addEventListener('click', () => {
+         templateHomeSingIn();
+         window.location.hash = '#/home'
+      });
+   })
+};
+
+
+

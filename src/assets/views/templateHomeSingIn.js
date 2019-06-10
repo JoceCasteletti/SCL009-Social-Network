@@ -1,10 +1,9 @@
-import { observer } from '../js/firebaseAuth.js';
+import { signInWithEmailAndPassword } from '../js/firebaseAuth.js';
 import { templateNewUser } from './templateNewUser.js'
 import { templatePost } from './templatePost.js'
 import { signInGmail } from '../js/firebaseAuth.js';
 
 export const templateHomeSingIn = () => {
-   observer()
    document.getElementById('root').innerHTML =
 
       `<div class="containerSingIn"> 
@@ -15,7 +14,7 @@ export const templateHomeSingIn = () => {
          </div>
          <div class="inputs">
             <input type="text" id="email" class="caja-texto form-control" placeholder="Ingresa tu mail" required></input>
-            <input type="text" id="password" class="caja-texto form-control" placeholder="Ingresa tu contraseña" required></input>
+            <input type="password" id="password" class="caja-texto form-control" placeholder="Ingresa tu contraseña" required></input>
          </div>
          <div class="btns-option">
             <button type="submit" id="btn-go" >Entrar</button>
@@ -34,8 +33,11 @@ export const templateHomeSingIn = () => {
    });
 
    document.getElementById('btn-go').addEventListener('click', () => {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value
+
       templatePost();
-      window.location.hash = '#/post'
+      signInWithEmailAndPassword(email, password);
    });
    
    document.getElementById('sign-in-gmail').addEventListener('click', () => {

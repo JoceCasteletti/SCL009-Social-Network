@@ -14,14 +14,12 @@ export const validateEmail = (email) => {
 	return emailpattern.test(email);
 }
 
-// export const validateSingIn = (email, password) => {
-// 	if(!validateEmail(email),password || email === "" || password === ""){
-// 		return false;
-// 	}else {
-// 		return true;
-// 	}
-// }
 
-
-
-	
+/*validaciones para el inicio de sesion no este vacia*/
+export const validateSignInWithEmailAndPassword = (emailUser,passwordUser) => {
+	if(emailUser === ""|| passwordUser ==="" ){
+	  return false;
+	}else{
+	  return true;
+	};
+  };

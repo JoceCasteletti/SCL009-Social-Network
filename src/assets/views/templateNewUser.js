@@ -1,5 +1,3 @@
-// import { templatePost } from './templatePost.js'
-import { templateHomeSingIn } from './templateHomeSingIn.js';
 import { validateNewUser } from '../js/validate.js';
 import { createUserFirebase } from '../js/firebaseAuth.js';
 import { validateEmail } from '../js/validate.js';
@@ -78,7 +76,6 @@ export const templateNewUser = () => {
       };
 
       document.getElementById('volver-home').addEventListener('click', () => {
-         templateHomeSingIn();
          window.location.hash = '#/home'
       });
    })

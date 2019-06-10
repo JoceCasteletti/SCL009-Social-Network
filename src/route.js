@@ -3,9 +3,7 @@ import { templateNewUser } from './assets/views/templateNewUser.js'
 import { templatePost } from './assets/views/templatePost.js'
 
 const changeRoute = (hash) => {
-    if (hash === '.#/new-user' || hash === '.#/post' || hash === '.#/home' || hash === '' || hash === './#' || hash === '.#/') {
-        return showTemplate(hash)
-    }
+    return showTemplate(hash)
 }
 
 const showTemplate = (hash) => {
@@ -40,6 +38,7 @@ export const initRouter = () => {
     if ('onhashchange' in window) {
         window.onhashchange = (e) => {
             e.preventDefault();
+            console.log(window.location.hash)
             changeRoute(window.location.hash)
         };
 

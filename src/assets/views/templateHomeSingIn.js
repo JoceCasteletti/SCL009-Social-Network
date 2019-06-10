@@ -1,6 +1,4 @@
 import { signInWithEmailAndPassword } from '../js/firebaseAuth.js';
-import { templateNewUser } from './templateNewUser.js'
-import { templatePost } from './templatePost.js'
 import { signInGmail } from '../js/firebaseAuth.js';
 
 export const templateHomeSingIn = () => {
@@ -28,7 +26,6 @@ export const templateHomeSingIn = () => {
       </div>`
 
    document.getElementById('btn-new-user').addEventListener('click', () => {
-      templateNewUser();
       window.location.hash = '#/new-user'
    });
 
@@ -36,7 +33,6 @@ export const templateHomeSingIn = () => {
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value
 
-      templatePost();
       signInWithEmailAndPassword(email, password);
    });
    

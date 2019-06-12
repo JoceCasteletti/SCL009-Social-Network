@@ -8,7 +8,7 @@ body {
  h1 {
     color:#1e8b8b;
     margin:0px;
-    margin-top:5%;
+    margin-top:50px;
  }
 
  h3 {
@@ -19,14 +19,13 @@ body {
 
  h4 {
     margin:0px;
-    margin-top:10%;
+    margin-top:150px;
     color:#707575;
  }
 
-#logo{
-width: 15%;
-padding-top: 5%;
-}
+ p {
+     margin: 0px;
+ }
 
  .caja-texto {
     border-radius: 6px;
@@ -36,23 +35,13 @@ padding-top: 5%;
     width:60%;
  }
 
- #btn-go {
+ #btn-go, #btn-google {
     color: white;
     background-color: #1e8b8b;
     border-color: #1e8b8b;
     margin-bottom:1%;
     border-radius: 10px;
     padding:10px;;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 15px;
- }
- #sign-in-gmail{
-    color: white;
-    background-color: #b90303;
-    border-color: #b90303;
-    margin-bottom:1%;
-    border-radius: 10px;
-    padding:10px;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 15px;
  }
@@ -111,10 +100,4 @@ form {
 .error {
    color: red;
    font-size: 0.8em;
-}
-#txt-footer{
-   color: #707575;
-   opacity: 70%;
-   text-align: center;
-   font-size: 1rem;
 }

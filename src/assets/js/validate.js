@@ -15,11 +15,5 @@ export const validateEmail = (email) => {
 }
 
 
-/*validaciones para el inicio de sesion no este vacia*/
-export const validateSignInWithEmailAndPassword = (emailUser,passwordUser) => {
-	if(emailUser === ""|| passwordUser ==="" ){
-	  return false;
-	}else{
-	  return true;
-	};
-  };
+
+	

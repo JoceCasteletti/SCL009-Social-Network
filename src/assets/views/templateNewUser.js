@@ -3,8 +3,8 @@ import { createUserFirebase } from '../js/firebaseAuth.js';
 import { validateEmail } from '../js/validate.js';
 import { emailVerification } from '../js/firebaseAuth.js';
 
-export const templateNewUser = () => {
 
+export const templateNewUser = () => {
    document.getElementById('root').innerHTML =
       `<div>
          <div class="flex-center">
@@ -103,7 +103,7 @@ export const templateNewUser = () => {
                emailVerification();
                alert("te enviamos un email para verificar tu cuenta")
                console.log(result);
-            })
+            });
       };
    });
 

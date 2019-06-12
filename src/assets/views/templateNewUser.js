@@ -99,11 +99,10 @@ export const templateNewUser = () => {
       let result = validateNewUser(name, surname, email, password, confirmPass, country, city);
       if (result === true) {
          createUserFirebase(email, password)
-            .then(() => {
-               emailVerification();
+            // .then(() => {
+            //    emailVerification();
                alert("te enviamos un email para verificar tu cuenta")
                console.log(result);
-            })
       };
    });
 

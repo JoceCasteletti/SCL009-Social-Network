@@ -1,25 +1,27 @@
 //CREAR NUEVO USUARIO|
-export const createUserFirebase = (email, password) =>
+export const createUserFirebase = (email, password, name, surname, country, city) =>{
   firebase.auth().createUserWithEmailAndPassword(email, password)
-    .catch(function (error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ...
-      emailVerification();
-    });
+  .then(function() {
+    emailVerification();
+  })
+  .catch(function(error) {
+  console.log("usuario se esta creando") 
+
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+  });
+}
 
 //enviar correo de verificacion al nuevo usuario
 export function emailVerification() {
   let user = firebase.auth().currentUser;
-  if(!user){
-    return;
-  }
+  if(!user) return;
   user.sendEmailVerification().then(function () {
-    console.log("enviamos un correo");
+     console.log("enviamos un correo");
     // Update successful.
   }).catch(function (error) {
-    console.log(error);
   })
 };
 
@@ -33,6 +35,7 @@ export const signInGmail = () => {
       // The signed-in user info.
       let user = result.user;
       // ...
+      console.log('hola')
       window.location.hash = '#/post';
 
     }).catch(function (error) {
@@ -49,49 +52,81 @@ export const signInGmail = () => {
 
 // Iniciar sesión con credencial
 export const signInWithEmailAndPassword = (email, password) => {
-
   return firebase.auth().signInWithEmailAndPassword(email, password);
 }
 
 //onAuthStateChanged metodo Observador
-
+// export const observer = () => {
+//   firebase.auth().onAuthStateChanged(function (user) {
+//     if (user) {
+//       console.log(user)
+//       window.location.hash = '#/post';
+//       // User is signed in.
+//     } else {
+//       console.log("No existe usuario logueado")
+//       window.location.hash = '';
+//       // No user is signed in.
+//     }
+//   });
+//  }
+// //observador que no dej inciar sesion
 export const observer = () => {
   firebase.auth().onAuthStateChanged(function (user) {
-    let emailVerified = user.emailVerification;
     if (user) {
       console.log(user);
-      console.log("usuario activo");   
-      if(!user.emailVerification){
-        console.log("no verifcado")
-        window.location.hash = "#/home";
-      }
-      else{
-        window.location.hash = "#/post";
-      }
-      if(emailVerified === true){
-        window.location.hash = "#/post";
-      }else {
-        alert("confirma tu email")
-      }
+      console.log("usuario activo");  
+      //enter(user);
     }else{
       console.log("usuario no activo");
       window.location.hash = '#/home'
-    // if(user.emailVerifed){
-    //    console.log("el usuario verifico su mail");
-    //    window.location.hash = '#/post'
-    //   // else{
-    //   //   window.location.hash = '#/home'; 
-    //   // }
-    //   // window.location.hash = '#/';
-    //   // User is signed in.
-    // }else {
-    //   console.log("No existe usuario logueado")
-    //   window.location.hash = '';
-      // No user is signed in.
-    }
+     
+    }})};
+      
     
-    });
-}
+ 
+
+    // function enter(user) {
+      // if(emailVerification === true){
+      //  window.location.hash = '#/post';
+      //  console.log("correo enviado")
+      // }
+      // else{
+      //  window.location.hash = '#/home';
+      // }
+      // }
+// //
+
+  // if(!user.emailVerification){
+      //   console.log("no verifcado")
+      //   window.location.hash = "#/home";
+      // }
+      // else{
+      //   window.location.hash = "#/post";
+      // }
+      // if(emailVerified === true){
+      //   window.location.hash = "#/post";
+      // }else {
+      //   alert("confirma tu email")
+      // }
+
+//     // if(user.emailVerifed){
+//     //    console.log("el usuario verifico su mail");
+//     //    window.location.hash = '#/post'
+//     //   // else{
+//     //   //   window.location.hash = '#/home'; 
+//     //   // }
+//     //   // window.location.hash = '#/';
+//     //   // User is signed in.
+//     // }else {
+//     //   console.log("No existe usuario logueado")
+//     //   window.location.hash = '';
+//       // No user is signed in.
+//     }
+    
+//     });
+// }
+
+
 /*Función signOut(), que sirve para que cuando el usuario cierre sesión, lo dirigia a la pantalla de inicio*/
 
 export const signOut = () => {
@@ -102,4 +137,5 @@ export const signOut = () => {
     }).catch(function (error) {
       // An error happened.
     });
-}
+ }
+

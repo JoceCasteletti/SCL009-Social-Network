@@ -12,3 +12,8 @@ let firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 };
+
+
+  // Initialize Cloud Firestore through Firebase
+//   let db = firebase.firestore();
+  

@@ -47,8 +47,12 @@ export const templateHomeSingIn = () => {
       const password = document.getElementById('password').value
 
       if (validateEmail(email) && password.length >= 6) {
-         signInWithEmailAndPassword(email, password).catch(() => {
-            alert('Credencial incorrecta');
+         signInWithEmailAndPassword(email, password)
+         .then(function() {
+            window.location.hash = '#/post';
+         })
+            .catch(() => {
+            alert('Usuario incorrecto, por favor intentalo nuevamente');
          });
       } else {
          if (!validateEmail(email)) {

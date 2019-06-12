@@ -6,7 +6,7 @@ export const templatePost = () => {
     document.getElementById('root').innerHTML =
         `
 
-<div>
+<div class="flex-center">
 <h1>Página en construcción</h1>
 <h3>haz click aqui para cerrar sesion</h3>
 <button id="signout">Cerrar sesión</button>

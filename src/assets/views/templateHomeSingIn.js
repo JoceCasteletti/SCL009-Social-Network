@@ -36,9 +36,6 @@ export const templateHomeSingIn = () => {
          </div>
       </div>`
 
-   document.getElementById('btn-new-user').addEventListener('click', () => {
-      window.location.hash = '#/new-user'
-   });
 
    document.getElementById('btn-go').addEventListener('click', () => {
       document.getElementById("error-email").innerHTML = '';
@@ -60,7 +57,7 @@ export const templateHomeSingIn = () => {
     if (goIn === true) {
          signInWithEmailAndPassword(emailUser, passwordUser)
          .catch(() => {
-            alert('Tu usuario no es vàlido');
+            alert('Tu usuario no es válido');
          });
       };
    });
@@ -68,6 +65,11 @@ export const templateHomeSingIn = () => {
    document.getElementById('sign-in-gmail').addEventListener('click', () => {
       signInGmail();
    });
+
+   document.getElementById('btn-new-user').addEventListener('click', () => {
+      window.location.hash = '#/new-user'
+   });
+
 };
 
 

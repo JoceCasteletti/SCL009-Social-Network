@@ -1,7 +1,8 @@
 import { signInWithEmailAndPassword } from '../js/firebaseAuth.js';
 import { signInGmail } from '../js/firebaseAuth.js';
 import { validateEmail } from '../js/validate.js';
-import { validateSignInWithEmailAndPassword } from '../js/validate.js'
+import { validateSignInWithEmailAndPassword } from '../js/validate.js';
+
 
 export const templateHomeSingIn = () => {
    document.getElementById('root').innerHTML =

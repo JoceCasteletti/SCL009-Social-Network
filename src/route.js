@@ -1,6 +1,7 @@
 import { templateHomeSingIn } from './assets/views/templateHomeSingIn.js'
 import { templateNewUser } from './assets/views/templateNewUser.js'
 import { templatePost } from './assets/views/templatePost.js'
+import { observer } from './assets/js/firebaseAuth.js';
 
 const changeRoute = (hash) => {
     return showTemplate(hash)
@@ -19,6 +20,7 @@ const showTemplate = (hash) => {
             templateNewUser();
             break;
         case 'post':
+            // observer();
             templatePost();
             break;
         case '':
@@ -32,12 +34,12 @@ const showTemplate = (hash) => {
 export const initRouter = () => {
     //evento load cuando se cargue nuestra ventana
     window.addEventListener('load', changeRoute(window.location.hash));
+    observer();
     // let containerRoot=document.getElementById('root');
     // containerRoot.appendChild(window.location.hash);
     //detecta los cambios en html y saca el # y asi va cambiando templates
     if ('onhashchange' in window) {
-        window.onhashchange = (e) => {
-            e.preventDefault();
+        window.onhashchange = () => {
             console.log(window.location.hash)
             changeRoute(window.location.hash)
         };

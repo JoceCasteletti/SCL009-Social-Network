@@ -8,7 +8,7 @@ body {
  h1 {
     color:#1e8b8b;
     margin:0px;
-    margin-top:5%;
+    margin-top: 2%;
  }
 
  h3 {
@@ -19,14 +19,9 @@ body {
 
  h4 {
     margin:0px;
-    margin-top:10%;
+    padding-top:5%;
     color:#707575;
  }
-
-#logo{
-width: 15%;
-padding-top: 5%;
-}
 
  .caja-texto {
     border-radius: 6px;
@@ -36,7 +31,7 @@ padding-top: 5%;
     width:60%;
  }
 
- #btn-go {
+ #btn-go,  #signout {
     color: white;
     background-color: #1e8b8b;
     border-color: #1e8b8b;
@@ -47,16 +42,15 @@ padding-top: 5%;
     font-size: 15px;
  }
  #sign-in-gmail{
-    color: white;
-    background-color: #b90303;
-    border-color: #b90303;
-    margin-bottom:1%;
-    border-radius: 10px;
-    padding:10px;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 15px;
- }
-
+   color: white;
+   background-color: #b90303;
+   border-color: #b90303;
+   margin-bottom:1%;
+   border-radius: 10px;
+   padding:10px;
+   font-family: 'Josefin Sans', sans-serif;
+   font-size: 15px;
+}
  #btn-new-user {
     background-color: transparent;
     border-style: none;
@@ -111,4 +105,21 @@ form {
 .error {
    color: red;
    font-size: 0.8em;
+}
+#working{
+   width: 50%;
+}
+
+#salir-pagina{
+   padding-top: 2%;
+}
+#logo{
+   width:8%;
+   padding-top:2%;
+}
+@media (max-width: 736px) {
+	#logo{
+   width: 15%;
+   padding-top: 4%;
+   }
 }

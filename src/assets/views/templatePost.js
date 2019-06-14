@@ -1,16 +1,18 @@
-
-import { signOut } from '../js/firebaseAuth.js';
+import {
+    signOut
+} from '../js/firebaseAuth.js';
 
 export const templatePost = () => {
 
     document.getElementById('root').innerHTML =
-        `
-
-<div class="flex-center">
+    
+        `<div class="flex-center">
 <h1>Página en construcción</h1>
-<h3>haz click aqui para cerrar sesion</h3>
-<button id="signout">Cerrar sesión</button>
-<img id="working" src="img/working progress.jpg">
+<img id="working" class="flex-center" src="assets/img/workingprogress.jpg" alt="imagen seguimos trabajando">
+<div id="salir-pagina">
+<h3>Haz click aqui para cerrar sesion</h3>
+<button id="signout" class="form-group">Cerrar sesión</button>
+</div>
 </div>`
 
     document.getElementById('signout').addEventListener('click', () => {
@@ -19,12 +21,3 @@ export const templatePost = () => {
 
 
 }
-// document.getElementById("btn-home").addEventListener('click', () => {
-//     templateHomeSingIn();
-//     window.location.hash = '#/home'
-//  })
-
-//  document.getElementById("btn-crear").addEventListener('click', () => {
-//     templateNewUser();
-//     window.location.hash = '#/new-user'
-//  })

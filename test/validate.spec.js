@@ -12,9 +12,6 @@ describe('validateNewUser',()=>{
     it('deberia retornar false si la contraseña tiene menos de 6 digitos',()=>{
       expect(validateNewUser ('Juan','Perez','juan.perez@gmail.com','')).toBe(false);
     });
-    it('deberia retornar true si las contraseñas coinciden',()=>{
-      expect(validateNewUser ('123456','123456')).toBe(true);
-    });
   });
 
   describe('validateEmail',()=>{

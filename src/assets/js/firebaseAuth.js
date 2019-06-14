@@ -74,7 +74,7 @@ alert("Necesitas confirmar tu email")
 })
 //si se ingresa algun usuario que no esta dentro de registro firebase aparece Usuario Incorrecto
   .catch(function(error) {
-    alert("Usuario incorrecto")
+    alert("Este usuario no esta registrado")
     console.log("SignInWithUsernameAndPassword not OK");
     // Handle Errors here.
     var errorCode = error.code;
@@ -83,7 +83,6 @@ alert("Necesitas confirmar tu email")
   });
 };
    
-
 
 //Observador; se ejecutra al cargar la pagina y permite acceder o no a los Post dependiendo de si 
 //eres usuario o no
@@ -102,62 +101,14 @@ export const observer = () => {
       let uid = user.uid;
       let providerData = user.providerData;
 
-      // if(emailVerified) {
-      //   console.log("Mail esta verificado");
-      //   window.location.hash = '#/post'
+     
       } else {
-        // alert('debes confirmar tu email')
         console.log("No esta logeado");
         window.location.hash = '#/home';
       // User is signed out.
       // ...
     }
   })};
-//const para que deje pasar si verifica el email
-    //  const enter = (user)=>{
-    //    let userEmail = user;
-    //   if(userEmail.emailVerification){
-    //     window.location.hash = '#/post'
-    //     return true;
-    //    console.log("email esta verificado ctm")
-    //   }
-    //   if(!userEmail.emailVerification){
-    //     console.log("verificate tu email parrrfavar")
-    //     window.location.hash = '#/home'
-    //   }
-    // }
-      
-//
-
-  // if(!user.emailVerification){
-      //   console.log("no verifcado")
-      //   window.location.hash = "#/home";
-      // }
-      // else{
-      //   window.location.hash = "#/post";
-      // }
-      // if(emailVerified === true){
-      //   window.location.hash = "#/post";
-      // }else {
-      //   alert("confirma tu email")
-      // }
-
-//     // if(user.emailVerifed){
-//     //    console.log("el usuario verifico su mail");
-//     //    window.location.hash = '#/post'
-//     //   // else{
-//     //   //   window.location.hash = '#/home'; 
-//     //   // }
-//     //   // window.location.hash = '#/';
-//     //   // User is signed in.
-//     // }else {
-//     //   console.log("No existe usuario logueado")
-//     //   window.location.hash = '';
-//       // No user is signed in.
-//     }
-    
-//     });
-// }
 
 
 /*Función signOut(), que sirve para que cuando el usuario cierre sesión, lo dirigia a la pantalla de inicio*/

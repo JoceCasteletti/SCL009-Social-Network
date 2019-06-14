@@ -39,7 +39,9 @@
     "eslint-plugin-jest": "^22.6.4",
     "express": "^4.17.1",
     "gh-pages": "^2.0.1",
-    "htmlhint": "^0.11.0",
     "jest": "^24.8.0"
+  },
+  "devDependencies": {
+    "htmlhint": "^0.11.0"
   }
 }

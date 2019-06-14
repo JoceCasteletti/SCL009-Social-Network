@@ -1,14 +1,15 @@
-import { validateNewUser } from '../js/validate.js';
+import { validateNewUser} from '../js/validate.js';
 import { createUserFirebase } from '../js/firebaseAuth.js';
 import { validateEmail } from '../js/validate.js';
-import { emailVerification } from '../js/firebaseAuth.js';
 
 export const templateNewUser = () => {
 
    document.getElementById('root').innerHTML =
       `<div>
          <div class="flex-center">
-            <h1> Nuevo Usuario Patria</h1>
+          
+            <h1> Viajeros Chilenos </h1>
+            <h3> Nuevo Usuario </h3>
          </div>
     
          <form id="form-new-user" class="">
@@ -18,28 +19,28 @@ export const templateNewUser = () => {
                   <div id="error-create-name" class="error"></div>
                </div>
                <div class="form-group">
-                  <input id="surname" type="text" class="info-new"" placeholder="Apellido">
+               <input id="surname" type="text" class="info-new" placeholder="Apellido"/>
                   <div id="error-create-surname" class="error"></div>
                </div>
                <div class="form-group">
-                  <input id="email-new-user" type="email" class="info-new"" placeholder="Email">
-                  <div id="error-create-email" class="error"></div>
+               <input id="email-new-user" type="email" class="info-new" placeholder=" Email"/>                  
+               <div id="error-create-email" class="error"></div>
                </div>
                <div class="form-group">
-                  <input id="password-new.user" type="password" class="info-new"" placeholder="Contraseña 6 dígitos">
+               <input id="password-new.user" type="password" class="info-new" placeholder=" Contraseña 6 dígitos"/>
                   <div id="error-create-password" class="error"></div>
                </div>
                <div class="form-group">
-                  <input id="confirm-pass" type="password" class="info-new"" placeholder="Confirmar contraseña 6 dígitos">
+               <input id="confirm-pass" type="password" class="info-new" placeholder=" Confirmar contraseña 6 dígitos"/>
                   <div id="error-create-confirm" class="error"></div>
                </div>
                <div class="form-group">
-                  <input id="country" type="text" class="info-new"" placeholder="Pais">
-                  <div id="error-create-country" class="error"></div>
+               <input id="country" type="text" class="info-new" placeholder=" Pais"/>                 
+                <div id="error-create-country" class="error"></div>
                </div>
                <div class="form-group">
-                  <input id="city" type="text" class="info-new"" placeholder="Ciudad">
-                  <div id="error-create-city" class="error"></div>
+               <input id="city" type="text" class="info-new" placeholder=" Ciudad"/>                  
+               <div id="error-create-city" class="error"></div>
                </div>
                <div class="form-group">
                   <button id="create-acc" type="submit" class="">Crear Cuenta</button>
@@ -99,10 +100,8 @@ export const templateNewUser = () => {
       let result = validateNewUser(name, surname, email, password, confirmPass, country, city);
       if (result === true) {
          createUserFirebase(email, password)
-            // .then(() => {
-            //    emailVerification();
-               alert("te enviamos un email para verificar tu cuenta")
-               console.log(result);
+         alert("te enviamos un email para verificar tu cuenta")
+         console.log(result);
       };
    });
 
@@ -111,6 +110,3 @@ export const templateNewUser = () => {
       window.location.hash = '#/home'
    });
 };
-
-
-

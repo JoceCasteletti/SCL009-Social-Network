@@ -24,7 +24,7 @@ export const validateSignInWithEmailAndPassword = (emailUser,passwordUser) => {
 	  return true;
 	};
 };
-
+ // comentando funciones
 
 
 	

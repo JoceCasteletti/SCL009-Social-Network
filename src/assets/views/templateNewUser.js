@@ -109,4 +109,4 @@ export const templateNewUser = () => {
       console.log('sahdahd')
       window.location.hash = '#/home'
    });
-};
+}; 

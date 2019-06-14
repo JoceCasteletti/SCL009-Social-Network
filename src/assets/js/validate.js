@@ -6,13 +6,21 @@ export const validateNewUser = (name, surname, email, password, confirmPass, cou
 		return false;
 	}else {
 	return true;
-}}
+}};
 
 //Validación de @ en email
 export const validateEmail = (email) => {
  let emailpattern = /\S+@\S+\.\S+/;
 	return emailpattern.test(email);
-}
+};
+
+export const validateSignInWithEmailAndPassword = (emailUser,passwordUser) => {
+	if(emailUser === ""|| passwordUser === "" || !validateEmail(emailUser)){
+	  return false;
+	}else{
+	  return true;
+	};
+};
 
 
 

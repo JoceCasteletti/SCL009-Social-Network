@@ -1,6 +1,7 @@
 import { signInWithEmailAndPassword } from '../js/firebaseAuth.js';
 import { signInGmail } from '../js/firebaseAuth.js';
 import { validateEmail } from '../js/validate.js';
+import { validateSignInWithEmailAndPassword } from '../js/validate.js'
 
 export const templateHomeSingIn = () => {
    document.getElementById('root').innerHTML =
@@ -15,11 +16,11 @@ export const templateHomeSingIn = () => {
             <form>
                <div class="flex-center">
                   <div class="form-group">
-                     <input type="text" id="email" class="caja-texto form-control" placeholder="Ingresa tu mail" required></input>
+                     <input type="text" id="email-user" class="caja-texto form-control" placeholder="Ingresa tu mail" required></input>
                      <div id="error-email" class="error"></div>
                   </div>
                   <div class="form-group">
-                     <input type="password" id="password" class="caja-texto form-control" placeholder="Ingresa tu contraseña" required></input>
+                     <input type="password" id="password-user" class="caja-texto form-control" placeholder="Ingresa tu contraseña" required></input>
                      <div id="error-password" class="error"></div>
                   </div>
                   <div class="form-group">
@@ -35,37 +36,30 @@ export const templateHomeSingIn = () => {
          </div>
       </div>`
 
-   document.getElementById('btn-new-user').addEventListener('click', () => {
-      window.location.hash = '#/new-user'
-   });
-
-   document.getElementById('btn-go').addEventListener('click', () => {
-      document.getElementById("error-email").innerHTML = '';
-      document.getElementById("error-password").innerHTML = '';
-
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value
-
-      if (validateEmail(email) && password.length >= 6) {
-         signInWithEmailAndPassword(email, password)
-         .then(function() {
-            window.location.hash = '#/post';
-         })
-            .catch(() => {
-            alert('Usuario incorrecto, por favor intentalo nuevamente');
-         });
-      } else {
-         if (!validateEmail(email)) {
-            document.getElementById('error-email').innerHTML = 'Ingresa email válido';
-         }
-         
-         if (password.length < 6) {
-            document.getElementById('error-password').innerHTML = 'La contraseña debe tener al menos 6 caracteres';
-         }
-      }
-   });
+      document.getElementById('btn-go').addEventListener('click', () => {
+         document.getElementById("error-email").innerHTML = '';
+         document.getElementById("error-password").innerHTML = '';
    
+         let emailUser = document.getElementById('email-user').value;
+         let passwordUser = document.getElementById('password-user').value
+   
+            if (!validateEmail(emailUser)) {
+               document.getElementById('error-email').innerHTML = 'Ingresa email válido';
+            }
+            if (passwordUser.length < 6) {
+               document.getElementById('error-password').innerHTML = 'La contraseña debe tener al menos 6 caracteres';
+            }
+        
+       //validar nuevo usario 
+       let goIn = validateSignInWithEmailAndPassword(emailUser, passwordUser);
+       if (goIn === true) {
+            signInWithEmailAndPassword(emailUser, passwordUser);
+         };
+   });
    document.getElementById('sign-in-gmail').addEventListener('click', () => {
       signInGmail();
    })
+   document.getElementById('btn-new-user').addEventListener('click', () => {
+      window.location.hash = '#/new-user'
+   });
 }

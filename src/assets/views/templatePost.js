@@ -10,6 +10,7 @@ export const templatePost = () => {
 <h1>Página en construcción</h1>
 <h3>haz click aqui para cerrar sesion</h3>
 <button id="signout">Cerrar sesión</button>
+<img id="working" src="img/working progress.jpg">
 </div>`
 
     document.getElementById('signout').addEventListener('click', () => {

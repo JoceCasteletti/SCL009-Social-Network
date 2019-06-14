@@ -1,3 +1,4 @@
+
 //CREAR NUEVO USUARIO|
 export const createUserFirebase = (email, password, name, surname, country, city) =>{
   firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -24,6 +25,8 @@ export function emailVerification() {
   }).catch(function (error) {
   })
 };
+
+
 
 // iniciar sesión con gmail
 export const signInGmail = () => {
@@ -52,49 +55,72 @@ export const signInGmail = () => {
 
 // Iniciar sesión con credencial
 export const signInWithEmailAndPassword = (email, password) => {
-  return firebase.auth().signInWithEmailAndPassword(email, password);
-}
+  firebase.auth().signInWithEmailAndPassword(email, password)
+  .then(() => {
+    let user = firebase.auth().currentUser;
+      if (user.emailVerified) {
+        window.location.hash = '#/post';  
+  // User is signed in.
+} else 
+alert("Necesitas confirmar tu email")
+   console.log("no haz verificado tu email")
+  // No user is signed in.
+})
+  .catch(function(error) {
+    alert("Usuario incorrecto")
+    console.log("SignInWithUsernameAndPassword not OK");
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    //...
+  });
+};
+   
+
 
 //onAuthStateChanged metodo Observador
-// export const observer = () => {
-//   firebase.auth().onAuthStateChanged(function (user) {
-//     if (user) {
-//       console.log(user)
-//       window.location.hash = '#/post';
-//       // User is signed in.
-//     } else {
-//       console.log("No existe usuario logueado")
-//       window.location.hash = '';
-//       // No user is signed in.
-//     }
-//   });
-//  }
-// //observador que no dej inciar sesion
+
 export const observer = () => {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       console.log(user);
-      console.log("usuario activo");  
-      //enter(user);
-    }else{
-      console.log("usuario no activo");
-      window.location.hash = '#/home'
-     
-    }})};
-      
-    
- 
 
-    // function enter(user) {
-      // if(emailVerification === true){
-      //  window.location.hash = '#/post';
-      //  console.log("correo enviado")
-      // }
-      // else{
-      //  window.location.hash = '#/home';
-      // }
-      // }
-// //
+      // User is signed in.
+      let displayName = user.displayName;
+      let email = user.email;
+      let emailVerified = user.emailVerified;
+      console.log(user.emailVerified);
+      let photoURL = user.photoURL;
+      let isAnonymous = user.isAnonymous;
+      let uid = user.uid;
+      let providerData = user.providerData;
+
+      // if(emailVerified) {
+      //   console.log("Mail esta verificado");
+      //   window.location.hash = '#/post'
+      } else {
+        // alert('debes confirmar tu email')
+        console.log("No esta logeado");
+        window.location.hash = '#/home';
+      // User is signed out.
+      // ...
+    }
+  })};
+//const para que deje pasar si verifica el email
+    //  const enter = (user)=>{
+    //    let userEmail = user;
+    //   if(userEmail.emailVerification){
+    //     window.location.hash = '#/post'
+    //     return true;
+    //    console.log("email esta verificado ctm")
+    //   }
+    //   if(!userEmail.emailVerification){
+    //     console.log("verificate tu email parrrfavar")
+    //     window.location.hash = '#/home'
+    //   }
+    // }
+      
+//
 
   // if(!user.emailVerification){
       //   console.log("no verifcado")
@@ -137,5 +163,5 @@ export const signOut = () => {
     }).catch(function (error) {
       // An error happened.
     });
- }
+ };
 

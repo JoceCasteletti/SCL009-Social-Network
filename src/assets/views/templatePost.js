@@ -1,8 +1,10 @@
+
 import { signOut } from '../js/firebaseAuth.js';
 
 export const templatePost = () => {
 
     document.getElementById('root').innerHTML =
+
     
         `<div class="flex-center responsive">
 <h1>Página en construcción</h1>
@@ -12,6 +14,7 @@ export const templatePost = () => {
 <button id="signout" class="form-group">Cerrar sesión</button>
 </div>
 </div>`
+
 
     document.getElementById('signout').addEventListener('click', () => {
         signOut();

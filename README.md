@@ -1,6 +1,6 @@
 
 ##  🚀 Readme Social Network 🚀
-Como proyecto creamos Viajeros Chilenos , para los chilenos que decidan salir del pais y necesiten datos de personas reales y comunes, que vivan el los lugares que quieren visitar o que ya hayan viajado a esos lugares  , ellos podran acceder desde sus pc o  directamente en sus teléfonos móviles, llamada [Viajeros Chilenos](https://). 
+Viajeros Chilenos, es una app orientada a chilenos que decidan ir de viaje y necesiten datos de personas que entiendan sus cultura y s sus costumbres. Estas personas puede ser compatriotas que viven en ese lugar o que lo visitaron por alguna razón, ellos podran acceder desde sus pc o  directamente en sus teléfonos móviles, llamada [Viajeros Chilenos](https://). 
 
 ## Sobre Viajeros Chilenos 
 [Viajeros Chilenos](https:) es creada desde la necesidad de los chilenos de tener datos buenos y seguros de los lugares a los que viajan.

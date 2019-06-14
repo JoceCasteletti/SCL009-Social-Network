@@ -36,7 +36,8 @@ export const initRouter = () => {
     // containerRoot.appendChild(window.location.hash);
     //detecta los cambios en html y saca el # y asi va cambiando templates
     if ('onhashchange' in window) {
-        window.onhashchange = () => {
+        window.onhashchange = (e) => {
+            e.preventDefault();
             console.log(window.location.hash)
             changeRoute(window.location.hash)
         };

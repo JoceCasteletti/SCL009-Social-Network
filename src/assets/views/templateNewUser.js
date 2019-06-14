@@ -5,14 +5,14 @@ import { validateEmail } from '../js/validate.js';
 export const templateNewUser = () => {
 
    document.getElementById('root').innerHTML =
-      `<div>
+      `<div class="responsive">
          <div class="flex-center">
           
             <h1> Viajeros Chilenos </h1>
             <h3> Nuevo Usuario </h3>
          </div>
     
-         <form id="form-new-user" class="">
+         <form id="form-new-user">
             <div class="flex-center">
                <div class="form-group">
                   <input id="name" type="text" class="info-new" placeholder="Nombre">

@@ -9,7 +9,7 @@ export const templateHomeSingIn = () => {
    observer();
    document.getElementById('root').innerHTML =
 
-      `<div class="containerSingIn"> 
+      `<div class="containerSingIn responsive"> 
          <div id="titulo-signIn" class="flex-center">
             <img src="assets/img/logo-vch.png" id="logo" alt="logo" class="flex-center"/> 
             <h1>Viajeros Chilenos</h1>

@@ -1,9 +1,9 @@
 
 ##  🚀 Readme Social Network 🚀
-Como proyecto creamos Viajeros Chilenos , para los chilenos que decidan salir del pais y necesiten datos de personas reales y comunes, que vivan el los lugares que quieren visitar o que ya hayan viajado a esos lugares  , ellos podran acceder desde sus pc o  directamente en sus teléfonos móviles, llamada [Viajeros Chilenos](https://). 
+Como proyecto creamos Viajeros Chilenos , para los chilenos que decidan salir del pais y necesiten datos de personas reales y comunes, que vivan el los lugares que quieren visitar o que ya hayan viajado a esos lugares  , ellos podran acceder desde sus pc o  directamente en sus teléfonos móviles, llamada [Viajeros Chilenos](https://github.com/majomarquez/SCL009-Social-Network/pull/new/gh-pages). 
 
 ## Sobre Viajeros Chilenos 
-[Viajeros Chilenos](https:) es creada desde la necesidad de los chilenos de tener datos buenos y seguros de los lugares a los que viajan.
+[Viajeros Chilenos](https://github.com/majomarquez/SCL009-Social-Network/pull/new/gh-pages) es creada desde la necesidad de los chilenos de tener datos buenos y seguros de los lugares a los que viajan.
 Hoy en Chile tenemos nuevas aerolineas de bajo costo y una gran oferta de pasajes aéreos, con esto aumento significativamente la cantidad de chilenos que quieren conocer nuevos destinos. Pero luego de comprar el pasaje ¿que viene?,  resaltan dudas como ¿Qué lugar es céntrico y seguro para hospedarme? , ¿Dónde puedo salir de noche tranquilamente?, ¿dónde comer rico y barato? ¿es seguro salir en ciertas horas? entre muchas otras y no existe un sitio donde podamos resolverlas sin una empresa que esté esperando vender algún servicio, por lo que la respuesta que encontremos ahí no sera necesariamente la mas objetiva .
 Buscando solucionar esto creamos Viajeros Chilenos donde los usuarios podran registrarse, contarnos de que pais y ciudad escriben y comentar todos esos datos que todos queremos saber para tener un viaje seguro , entretenido y sin inconvenientes.
 

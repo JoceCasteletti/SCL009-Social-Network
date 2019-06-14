@@ -1,11 +1,14 @@
 
 ##  🚀 Readme Social Network 🚀
-Viajeros Chilenos, es una app orientada a chilenos que decidan ir de viaje y necesiten datos de personas que entiendan sus cultura y s sus costumbres. Estas personas puede ser compatriotas que viven en ese lugar o que lo visitaron por alguna razón, ellos podran acceder desde sus pc o  directamente en sus teléfonos móviles, llamada [Viajeros Chilenos](https://). 
+Viajeros Chilenos, es una app orientada a chilenos que decidan ir de viaje y necesiten datos de personas que entiendan su cultura y sus costumbres. Nuestros usuarios puede ser personas que viven en ese lugar o que han visitado el lugar por alguna razón.
 
 ## Sobre Viajeros Chilenos 
-[Viajeros Chilenos](https:) es creada desde la necesidad de los chilenos de tener datos buenos y seguros de los lugares a los que viajan.
-Hoy en Chile tenemos nuevas aerolineas de bajo costo y una gran oferta de pasajes aéreos, con esto aumento significativamente la cantidad de chilenos que quieren conocer nuevos destinos. Pero luego de comprar el pasaje ¿que viene?,  resaltan dudas como ¿Qué lugar es céntrico y seguro para hospedarme? , ¿Dónde puedo salir de noche tranquilamente?, ¿dónde comer rico y barato? ¿es seguro salir en ciertas horas? entre muchas otras y no existe un sitio donde podamos resolverlas sin una empresa que esté esperando vender algún servicio, por lo que la respuesta que encontremos ahí no sera necesariamente la mas objetiva .
-Buscando solucionar esto creamos Viajeros Chilenos donde los usuarios podran registrarse, contarnos de que pais y ciudad escriben y comentar todos esos datos que todos queremos saber para tener un viaje seguro , entretenido y sin inconvenientes.
+[Viajeros Chilenos](https://majomarquez.github.io/SCL009-Social-Network/src/index.html#/home) es creada desde la necesidad que los viajeros chilenos tienen de sentirse como en casa y hacer más placentero el tiempo que pasen en otro pais.
+
+
+Con la llegada a Chile de aerolíneas de bajo costo, la gran oferta de pasajes aéreos y las varias visas que permiten a jóvenes trabajar y vacacionar en un país extranjero, ha aumentado significativamente las ganas de salir a conocer el mundo y es ahi donde comienzan las dudas, ¿A dónde debo ir? ¿Dónde me puedo quedar? ¿Dónde puedo salir de carrete con música que me guste?,¿Dónde puedo comer comida parecida a la de mi país?, ¿Dónde puedo celebrar el 18 de Septiembre?, entre muchas otras dudas. No existe ningún sitio destinado al viajero que vaya por un tiempo más prolongado a un país extranjero.
+
+Buscando solucionar este vacío, creamos *Viajeros Chilenos* una app donde los usuarios podrán registrarse, leer y entregar tips para tener un viaje seguro, entretenido y sin inconvenientes.
 
 ## Planificación 
 
@@ -67,7 +70,7 @@ El prototipo de Alta Fidelidad fue realizado en [Figma](https://www.figma.com/fi
 
 ### Consideraciones en el desarrollo 
 
-*nuestro proyecto fue desarrollado JS, HTML y CSS.
+Nuestro proyecto fue desarrollado JS, HTML y CSS.
 
 **Implementación de la interfaz**
 
@@ -75,7 +78,7 @@ Ademas de JS , HTML y CSS utilizamos Firebase , github, y el deploy fue realizad
 Durante la duracion de este proyecto las trealoizadoras trabajamos con pair programming, logrando avanzar a la par.
 
 
-**Test**
+##Tests
 ### Test de Usabilidad
  
 Primero realizamos el test de el prototipo, este fuetesteado con compañeras que les interesaba viajar, y nos dieron sus feedback.
@@ -98,7 +101,7 @@ Finalmente tambien obtuvimos feedback sobre los datos solicitados al crear un us
 
 * Implementar el muro para poder postear, el que incluya modificaciones y eliminar post ademas de dejar comentarios en el.
 * Implementar un filtro por pais y ciudad.
-
+* Poder acceder a mi localizacion y visualizar los tips que otros usuarios han agregado a mi alrededor.
 
 ### Autoras 
 * Jocelyn Casteletti

@@ -4,16 +4,6 @@ export const createUserFirebase = (email, password, name, surname, country, city
   firebase.auth().createUserWithEmailAndPassword(email, password)
   .then(function() {
     emailVerification();
-<<<<<<< HEAD
-=======
-    window.location.hash='#/home';
-  })
-  .catch(function (error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ...
->>>>>>> 7702983b13561bc3ab16e7d76a36567d2e0a2846
   })
   .catch(function(error) {
   console.log("usuario se esta creando") 
@@ -29,10 +19,7 @@ export const createUserFirebase = (email, password, name, surname, country, city
 // se envia un mail para confirmar. Si no quedo registrado se devuleve a donde quedo.
 export function emailVerification() {
   let user = firebase.auth().currentUser;
-<<<<<<< HEAD
   if(!user) return;
-=======
->>>>>>> 7702983b13561bc3ab16e7d76a36567d2e0a2846
   user.sendEmailVerification().then(function () {
      console.log("enviamos un correo");
     // Update successful.
@@ -102,7 +89,6 @@ alert("Necesitas confirmar tu email")
 export const observer = () => {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-<<<<<<< HEAD
       console.log(user);
 
       // User is signed in.
@@ -123,21 +109,6 @@ export const observer = () => {
       // ...
     }
   })};
-=======
-      console.log(user)
-      window.location.hash = '#/post';
-      // User is signed in.
-    } else {
-      console.log("No existe usuario logueado")
-      window.location.hash = '';
-      // No user is signed in.
-    }
-  });
-}
-
-
-/*Función signOut(), que sirve para que cuando el usuario cierre sesión, lo dirigia a la pantalla de inicio*/
->>>>>>> 7702983b13561bc3ab16e7d76a36567d2e0a2846
 
 
 /*Función signOut(), que sirve para que cuando el usuario cierre sesión, lo dirigia a la pantalla de inicio*/
